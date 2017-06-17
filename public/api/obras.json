@@ -1,0 +1,92 @@
+{
+  "obras":[
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Continuamos arreglando la ruta 50, mejorando sus banquinas y el mantenimiento de alcantarillas",
+      "categoria": "Obras Públicas",
+      "imagen": "rotonda.jpg",
+      "fecha": "5 de mmayo",
+      "estado": "Finalizado"
+    },
+    {
+      "titulo": "Dragado del Canal Salgado",
+      "descripcion": "Continuamos arreglando  arreglandoarreglando arreglandoarreglando arreglandola ruta 50, mejorando sus banquinas y el mantenimiento de alcantarillas",
+      "categoria": "Obras Públicas",
+      "imagen": "rotonda.jpg",
+      "fecha": "5 de mmayo"
+    },
+
+    {
+      "titulo": "Entubado",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "2.jpg"
+    },
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "rotonda.jpg"
+    },
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "rotonda.jpg"
+    },
+    {
+      "titulo": "Entubad  ad asdasd asdasd asdasd asss wweq ",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "2.jpg"
+    },
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "rotonda.jpg"
+    },
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "rotonda.jpg"
+    },
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "rotonda.jpg"
+    },
+    {
+      "titulo": "Rotonda de las 5 esquinas",
+      "descripcion": "Jueves 8 de Junio",
+      "progreso": "75",
+      "ubicacion": "5 esquinas",
+      "gasto": "$1.200.000",
+      "categoria": "Transito",
+      "imagen": "rotonda.jpg"
+    }
+  ]
+}
