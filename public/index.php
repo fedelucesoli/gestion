@@ -1,7 +1,7 @@
 <?php
 
 require '../vendor/autoload.php';
-require 'helpers\helper.php';
+require 'helpers/helper.php';
 Flight::set('secret_key', 'sdaf654sdaf321as34');
 Flight::set('domain', 'http://example.com');
 $link = connect();

@@ -45,7 +45,7 @@
 		return mail($email, $subject, $template, $headers);
 	}
   function connect(){
-    $link = mysqli_connect("localhost", "root","","gestion") or die("DB is down");
+    $link = mysqli_connect("localhost:8889", "root","","gestion") or die("DB is down");
 	  mysqli_set_charset($link, "utf8");
     return $link;
   }

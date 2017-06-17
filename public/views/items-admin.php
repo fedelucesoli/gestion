@@ -1,6 +1,6 @@
 <?php
 
-$str = file_get_contents('api\obras.json');
+$str = file_get_contents('api/obras.json');
 
 $json = json_decode($str, true);
 

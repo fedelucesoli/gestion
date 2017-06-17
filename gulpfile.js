@@ -4,8 +4,8 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rename = require("gulp-rename"),
     uglify = require('gulp-uglify');
-    // connect = require('gulp-connect-php'),
-    // httpProxy = require('http-proxy');
+    connect = require('gulp-connect-php'),
+    httpProxy = require('http-proxy');
 
 
 // Compile LESS files from /less into /css
@@ -69,6 +69,48 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('dev', ['browser-sync', 'less', 'minify-css', 'minify-js'], function() {
+    gulp.watch('public/assets/lobostrap/*.less', ['less', browserSync.reload]);
+    gulp.watch('public/assets/lobostrap/includes/*.less', ['less', browserSync.reload]);
+    gulp.watch('public/assets/css/*.css', ['minify-css', browserSync.reload]);
+    gulp.watch('public/assets/js/*.js', ['minify-js']);
+    // Reloads the browser whenever HTML or JS files change
+    gulp.watch('public/*.php', browserSync.reload);
+    gulp.watch('public/includes/*.php', browserSync.reload);
+    gulp.watch('public/assets/js/**/*.js', browserSync.reload);
+});
+
+
+
+gulp.task('connect-sync', function () {
+    connect.server({
+        port: 8079,
+        base: 'public',
+        open: true
+    });
+
+    var proxy   = httpProxy.createProxyServer({});
+    var reload  = browserSync.reload;
+
+    browserSync.init({
+        notify: false,
+        port  : 8079,
+        server: {
+            baseDir   : ['public'],
+            middleware: function (req, res, next) {
+                var url = req.url;
+
+                if (!url.match(/^\/(styles)\//)) {
+                    proxy.web(req, res, { target: 'http://localhost:8079' });
+                } else {
+                    next();
+                }
+            }
+        }
+    });
+
+
+});
+gulp.task('devmac', ['connect-sync', 'less', 'minify-css', 'minify-js'], function() {
     gulp.watch('public/assets/lobostrap/*.less', ['less', browserSync.reload]);
     gulp.watch('public/assets/lobostrap/includes/*.less', ['less', browserSync.reload]);
     gulp.watch('public/assets/css/*.css', ['minify-css', browserSync.reload]);
