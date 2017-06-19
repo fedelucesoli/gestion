@@ -16,7 +16,8 @@ $json = json_decode($str, true);
 
     <?php foreach ($json['obras'] as $key): ?>
       <div class="grid-item col-md-4 col-sm-6 col-xs-12">
-        <div class=" grid-item-content card-obra">
+        <div class=" grid-item-content card-obra ">
+          <div class="loading"></div>
           <div class="back-img" style="background-image: url('uploads/<?php echo  $key['imagen'] ?>');"></div>
             <div class="detalles">
               <a class="categoria" href="#"><?php echo $key['categoria'] ?></a>
