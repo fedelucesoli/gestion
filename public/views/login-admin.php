@@ -12,7 +12,7 @@
           <label for="inputEmail" class="sr-only">Usuario</label>
           <input type="usuario" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required="" autofocus="">
           <label for="password" class="sr-only">Contrase&ntilde;a</label>
-          <input type="password" id="password" class="form-control" placeholder="Contrase&ntilde;a" required="">
+          <input type="password" id="password" class="form-control" name="password" placeholder="Contrase&ntilde;a" required="">
           <!-- <div class="checkbox">
             <label>
               <input type="checkbox" value="remember-me"> Remember me

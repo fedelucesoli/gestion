@@ -1,8 +1,8 @@
 @import "variables.less";
+@import "mixins.less";
 @import "nav.less";
 
 body{
-  padding-bottom: 150px;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -63,14 +63,15 @@ header {
 // .grid-item { width: 25%; }
 .card-obra{
   position: relative;
-
   .box-shadow;
-  padding: 0 0 20px 0;
+  padding-bottom: 20px;
   margin: 15px 0;
   border: 1px solid rgba(79, 102, 133, 0.22);
+  .transition-all;
   &:hover{
-    box-shadow: 2px 5px 32px 1px rgba(0, 0, 0, .2);
     cursor: pointer;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.22);
+    .transition-all;
     h4{
       color: @theme-primary;
     }

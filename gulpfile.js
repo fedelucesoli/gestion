@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rename = require("gulp-rename"),
     uglify = require('gulp-uglify');
-    connect = require('gulp-connect-php'),
+    // connect = require('gulp-connect-php'),
     httpProxy = require('http-proxy');
 
 
@@ -64,7 +64,7 @@ gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "localhost/obras/public"
+        proxy: "localhost/gestion/public"
     });
 });
 
