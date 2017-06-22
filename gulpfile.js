@@ -64,7 +64,7 @@ gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "localhost/gestion/public"
+        proxy: "localhost/skeleto/public"
     });
 });
 
@@ -116,7 +116,8 @@ gulp.task('devmac', ['connect-sync', 'less', 'minify-css', 'minify-js'], functio
     gulp.watch('public/assets/css/*.css', ['minify-css', browserSync.reload]);
     gulp.watch('public/assets/js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('public/*.php', browserSync.reload);
+    gulp.watch('src/*/*.php', browserSync.reload);
+    gulp.watch('src/*/*.twig', browserSync.reload);
     gulp.watch('public/includes/*.php', browserSync.reload);
     gulp.watch('public/assets/js/**/*.js', browserSync.reload);
 });

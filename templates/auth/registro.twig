@@ -1,0 +1,29 @@
+{% extends "layout.twig" %}
+{% block body%}
+<section class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <div class="panel">
+      <div class="panel-heading">
+          <h3>Inicio de sesi&oacute;n</h3>
+      </div>
+
+
+      <div class="panel-body">
+        <form class="form-signin" method="post" action="{{path_for('auth.registro')}}">
+            <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required="" autofocus="">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="password" id="password" class="form-control" name="password" placeholder="Contrase&ntilde;a" required="">
+            <br>
+            <button class="btn  btn-primary btn-block" type="submit">Iniciar Sesi&oacute;n</button>
+          </form>
+      </div>
+
+      </div>
+    </div>
+    </div>
+
+
+</section>
+{% endblock body%}

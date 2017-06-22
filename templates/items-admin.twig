@@ -1,0 +1,37 @@
+{% extends "layout.twig" %}
+{% block body %}
+
+<?php
+
+$str = file_get_contents('api/obras.json');
+
+$json = json_decode($str, true);
+
+ ?>
+
+<section>
+<div class="container">
+  <br>
+
+  <div class="grid"  data-masonry='{ "itemSelector": ".grid-item" }'>
+
+    <?php foreach ($json['obras'] as $key): ?>
+      <div class="grid-item col-md-4 col-sm-6 col-xs-12">
+        <div class=" grid-item-content card-obra ">
+          <div class="loading"></div>
+          <div class="back-img" style="background-image: url('uploads/<?php echo  $key['imagen'] ?>');"></div>
+            <div class="detalles">
+              <a class="categoria" href="#"><?php echo $key['categoria'] ?></a>
+              <h4><?php echo $key['titulo'] ?></h4>
+
+              <div class="descripcion"><p><?php echo $key['descripcion'] ?></p></div>
+            </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
+
+  </div>
+
+</div>
+</section>
+{% endblock body %}

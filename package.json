@@ -1,9 +1,11 @@
 {
-  "name": "obras",
+  "name": "GestionLobos",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Federico Lucesoli",
   "license": "MIT",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
