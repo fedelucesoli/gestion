@@ -1,0 +1,105 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+}
+header.header-obras {
+  height: 300px !important;
+  background-image: url('../img/back-obras2.jpg');
+}
+header .header-content {
+  position: relative;
+  text-align: center;
+  padding: 150px 15px 50px;
+  width: 100%;
+}
+header .header-content h1 {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  header .header-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 50px;
+  }
+  header .header-content .header-content-inner {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .header-content .header-content-inner h1 {
+    font-size: 50px;
+  }
+  header .header-content .header-content-inner p {
+    font-size: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.card-obra {
+  position: relative;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  margin: 15px 0;
+  border: 1px solid rgba(79, 102, 133, 0.22);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.card-obra:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.22);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.card-obra:hover h4 {
+  color: #df3837;
+}
+.card-obra .loading {
+  position: absolute;
+  background-color: red;
+}
+.card-obra .back-img {
+  height: 220px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+.card-obra .detalles {
+  padding: 10px 25px 0px;
+}
+.card-obra .detalles h4 {
+  font-weight: 400;
+}
+.card-obra .detalles .categoria {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 4px 14px;
+  background-color: white;
+  border-left: 3px solid #df3837;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: .8em;
+  color: #df3837;
+}
+.card-obra .detalles .categoria:hover {
+  background-color: rgba(223, 56, 55, 0.8);
+  color: white;
+}

@@ -11,7 +11,9 @@
 |
 */
 Route::get('/', 'WebController@index')->name('inicio');
-Route::get('logout', 'Auth\AuthController@getLogout');
+Route::get('/item/{id}', 'WebController@item')->name('web.item.detalle');
+
+// Route::get('logout', 'Auth\AuthController@getLogout');
 // Route::get('admin/login', 'Auth\LoginController');
 
 
@@ -21,7 +23,7 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 
 Auth::routes();
 
-Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
+Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 Route::get('/items/list', 'AdminController@itemsList')->name('admin.item.list');
 Route::get('/items/add', 'AdminController@itemsCreate')->name('admin.item.create');
 Route::post('/items/add', 'AdminController@itemsAdd')->name('admin.item.add');

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @push('scripts')
-  <script src="{{asset("vendor/dropzone.js")}}"></script>
+  <script src="{{asset("assets/vendor/dropzone.js")}}"></script>
   <script type="text/javascript">
   var photo_counter = 0;
 Dropzone.options.realDropzone = {

@@ -1,5 +1,5 @@
 @push('scripts')
-  <script src="{{asset("vendor/dropzone.js")}}"></script>
+  <script src="{{asset("assets/vendor/dropzone.js")}}"></script>
 
   <script type="text/javascript">
   $('#myModal').on('shown.bs.modal', function () {

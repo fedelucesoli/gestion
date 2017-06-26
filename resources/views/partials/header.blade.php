@@ -2,7 +2,9 @@
   <div class="container">
     <div class="navbar-header">
       <div class="logo-menu">
-        <img src="{{ asset('img/logo-municipiodelobos_blanco.png')}}" class="img-responsive" alt="Municipio de Lobos">
+        <a href="{{url('/')}}">
+          <img src="{{ asset('assets/img/logo-municipiodelobos_blanco.png')}}" class="img-responsive" alt="Municipio de Lobos">
+        </a>
       </div>
     </div>
   </div>
@@ -19,7 +21,7 @@
             </div>
         </div>
     </div> -->
-    
+
 </nav>
 
 <header class="header-obras">
