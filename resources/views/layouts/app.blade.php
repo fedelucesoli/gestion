@@ -15,8 +15,8 @@
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lobostrap/lobostrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/obras.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/lobostrap/lobostrap.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('assets/css/obras.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet">
     {{-- <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"> --}}
 
@@ -89,7 +89,7 @@
     <footer>
           <div class="container">
             <div class="row">
-              <div class="col-md-12">Municipio de Lobos - 2017</div>
+              <div class="col-md-12 text-right"> 2017 - Municipio de Lobos </div>
             </div>
           </div>
         </footer>

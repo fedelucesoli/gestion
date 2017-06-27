@@ -30,9 +30,15 @@ class WebController extends Controller
 
         return view('inicio', $data);
     }
-    public function item($id)
-    {
+
+    public function item($id){
+
       $data['item'] = Items::find($id);
+      $data['itemrelacionados'] = Items::where('categoria', $data['item']->categoria)
+                                  ->where('id', '!=', $data['item']->id)
+                                  ->limit(3)
+                                  ->get();
+
       if(is_null($data['item'])){
         return redirect()->route('inicio');
       }

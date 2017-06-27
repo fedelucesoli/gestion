@@ -1,4 +1,4 @@
-@import url('colores.css');
+/*@import url('colores.css');
 @import url('texto.css');
 @import url('menu.css');
 @import url('https://fonts.googleapis.com/css?family=Domine:400,700|Montserrat:400,700');
@@ -154,11 +154,11 @@ footer{
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) { 
+@media screen and (min-width: 992px) {
   .slider{
     height: 480px;
   }
  }
 
 /* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) { ... }
+@media screen and (min-width: 1200px) { ... }*/

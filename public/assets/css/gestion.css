@@ -1,3 +1,108 @@
+.box-shadow {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.drop-shadow {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+  min-height: 0;
+}
+.navbar-default {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(223, 56, 55, 0.2);
+  border: none;
+}
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  border-bottom: 5px solid #df3837;
+  padding-bottom: 10px;
+}
+.navbar-default .navbar-nav > li > a.active {
+  border-bottom: 5px solid #df3837;
+  padding-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 0px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+    border: none;
+  }
+}
+.navbar-toggle {
+  border-color: #df3837 !important;
+  color: #df3837;
+}
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.navbar-toggle .icon-bar {
+  background-color: #fafafa;
+}
+.logo-menu {
+  position: absolute;
+  z-index: 9999;
+  background-color: #df3837;
+  height: 50px;
+  width: 120px;
+  border-radius: 0  0  2px  2px;
+}
+@media (min-width: 1000px) {
+  .nav-small .logo-menu {
+    height: 50px;
+    width: 180px;
+  }
+}
+.logo-menu img {
+  margin: 0 auto;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .logo-menu {
+    height: 80px;
+    width: 180px;
+  }
+  .logo-menu .nav-small {
+    height: 50px;
+    width: 180px;
+  }
+}
+footer {
+  margin-top: 50px;
+  border-top: 1px solid #df3837;
+  padding: 15px 0;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,9 +116,14 @@ header {
   background-position: center center;
   text-align: center;
   color: white;
+  margin-bottom: 50px;
 }
 header.header-obras {
-  height: 300px !important;
+  height: 320px !important;
+  background-image: url('../img/back-obras2.jpg');
+}
+header.header-obras-admin {
+  height: 200px !important;
   background-image: url('../img/back-obras2.jpg');
 }
 header .header-content {
@@ -54,10 +164,17 @@ header .header-content h1 {
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
   padding-bottom: 20px;
   margin: 15px 0;
-  border: 1px solid rgba(79, 102, 133, 0.22);
+  border: 1px solid rgba(79, 102, 133, 0.12);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
+}
+.card-obra a:hover {
+  text-decoration: none;
+  color: #df3837;
+}
+.card-obra a > h4 {
+  color: #2C2F36;
 }
 .card-obra:hover {
   cursor: pointer;
@@ -66,8 +183,9 @@ header .header-content h1 {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
-.card-obra:hover h4 {
+.card-obra:hover a > h4 {
   color: #df3837;
+  text-decoration: none;
 }
 .card-obra .loading {
   position: absolute;
@@ -94,8 +212,8 @@ header .header-content h1 {
   border-left: 3px solid #df3837;
   text-transform: uppercase;
   margin-top: 10px;
-  font-family: "Montserrat";
-  font-weight: 400;
+  font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
   font-size: .8em;
   color: #df3837;
 }

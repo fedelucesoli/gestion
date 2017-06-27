@@ -81,13 +81,11 @@ gulp.task('connect-sync', function () {
             }
         }
     });
-
-
 });
 
 // Dev task with browserSync
 gulp.task('dev', ['connect-sync', 'less', 'minify-css', 'minify-js'], function() {
-    gulp.watch('resources/assets/less/gestion.less', ['less']);
+    gulp.watch('resources/assets/less/*.less', ['less']);
     gulp.watch('public/assets/css/*.css', ['minify-css']);
     gulp.watch('resources/assets/js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
