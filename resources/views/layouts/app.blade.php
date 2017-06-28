@@ -15,8 +15,6 @@
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('assets/lobostrap/lobostrap.css') }}" rel="stylesheet"> --}}
-    {{-- <link href="{{ asset('assets/css/obras.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet">
     {{-- <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"> --}}
 
@@ -104,6 +102,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     @stack('scripts')
-    
+
 </body>
 </html>

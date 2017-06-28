@@ -14,9 +14,11 @@
     <title>Obras públicas Lobos</title>
 
     <!-- Bootstrap -->
-    <link href="{{ asset('dist/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lobostrap/lobostrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/obras.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
+
     {{-- <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"> --}}
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -28,10 +30,9 @@
    {{-- @include('partials/header') --}}
 
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -84,15 +85,29 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+              <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Escritorio <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+              @yield('content')
+            </div>
+          </div>
+        </div>
     </div>
 
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
     @stack('scripts')
 
 </body>

@@ -27,6 +27,14 @@ gulp.task('less', function() {
             stream: true
         }))
 });
+gulp.task('lessAdmin', function() {
+    return gulp.src('resources/assets/less/admin.less')
+        .pipe(less())
+        .pipe(gulp.dest('public/assets/css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
@@ -86,6 +94,7 @@ gulp.task('connect-sync', function () {
 // Dev task with browserSync
 gulp.task('dev', ['connect-sync', 'less', 'minify-css', 'minify-js'], function() {
     gulp.watch('resources/assets/less/*.less', ['less']);
+    gulp.watch('resources/assets/less/admin.less', ['lessAdmin']);
     gulp.watch('public/assets/css/*.css', ['minify-css']);
     gulp.watch('resources/assets/js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change

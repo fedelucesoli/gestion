@@ -43,7 +43,6 @@ Dropzone.options.realDropzone = {
 
   <link rel="stylesheet" href="{{asset('vendor/dropzone.css')}}">
 
-  <div class="container">
       <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <div class="panel panel-default">
@@ -112,7 +111,6 @@ Dropzone.options.realDropzone = {
 
 
     </div>
-  </div>
   </div>
   </div>
   </div>
