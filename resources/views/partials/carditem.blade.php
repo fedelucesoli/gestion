@@ -9,7 +9,7 @@
         @endforeach
 
           <div class="detalles">
-            <a class="categoria" href='{{url("categoria/ str_slug($item->categoria, "-")") }}'>{{ $item->categoria }}</a>
+            <a class="categoria" href='{{ url("categoria/"+str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
             <a href='{{url("item/$item->id")}}'>
               <h4>{{ $item->titulo }}</h4>
             </a>

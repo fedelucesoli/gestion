@@ -1,8 +1,8 @@
 .box-shadow {
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
 .drop-shadow {
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
 .navbar {
   min-height: 0;
@@ -133,7 +133,7 @@ header .header-content {
   width: 100%;
 }
 header .header-content h1 {
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 768px) {
   header .header-content {
@@ -159,15 +159,31 @@ header .header-content h1 {
     margin-right: auto;
   }
 }
+.top {
+  position: absolute;
+  width: 80px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #df3837;
+}
+.top-left {
+  width: 80px;
+  border-bottom: 2px solid #df3837;
+  margin-bottom: 25px;
+}
 .card-obra {
   position: relative;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
-  padding-bottom: 20px;
   margin: 15px 0;
-  border: 1px solid rgba(79, 102, 133, 0.12);
+  box-sizing: border-box;
+  background-color: white;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 3px;
 }
 .card-obra a:hover {
   text-decoration: none;
@@ -178,7 +194,7 @@ header .header-content h1 {
 }
 .card-obra:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -198,7 +214,7 @@ header .header-content h1 {
   background-size: cover;
 }
 .card-obra .detalles {
-  padding: 10px 25px 0px;
+  padding: 15px;
 }
 .card-obra .detalles h4 {
   font-weight: 400;
@@ -220,4 +236,21 @@ header .header-content h1 {
 .card-obra .detalles .categoria:hover {
   background-color: rgba(223, 56, 55, 0.8);
   color: white;
+}
+.ficha {
+  margin-top: 25px;
+}
+.redes {
+  position: absolute;
+  bootom: 0;
+}
+.bk-light {
+  background-color: #f0f1f3;
+  padding: 25px 0;
+  margin-top: 25px;
+  border: solid rgba(44, 47, 54, 0.15);
+  border-width: 1px 0 1px;
+}
+.bk-light .col-md-12 {
+  margin-bottom: 20px;
 }

@@ -25,6 +25,12 @@
 
 </head>
 <body>
+  {{-- @if (Request::is('backend/*'))
+      @include('backend.index.head')
+  @else
+      @include('frontend.index.head')
+  @endif --}}
+
    @include('partials/header')
 
     <div id="app">
@@ -87,16 +93,17 @@
         @yield('content')
     </div>
     <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-right"> 2017 - Municipio de Lobos </div>
-            </div>
-          </div>
-        </footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right"> 2017 - Municipio de Lobos </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     @stack('scripts')
+    
 </body>
 </html>
