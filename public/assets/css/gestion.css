@@ -107,6 +107,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: #f0f1f3;
 }
 header {
   position: relative;
@@ -245,11 +246,11 @@ header .header-content h1 {
   bootom: 0;
 }
 .bk-light {
-  background-color: #f0f1f3;
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 25px 0;
-  margin-top: 25px;
-  border: solid rgba(44, 47, 54, 0.15);
-  border-width: 1px 0 1px;
+  margin: 35px 0;
+  border-top: 1px solid rgba(44, 47, 54, 0.1);
+  border-bottom: 2px solid rgba(44, 47, 54, 0.1);
 }
 .bk-light .col-md-12 {
   margin-bottom: 20px;

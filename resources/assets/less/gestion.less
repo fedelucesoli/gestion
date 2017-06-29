@@ -6,7 +6,7 @@ body{
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
+  background-color: @gray-lighter;
 }
 
 header {
@@ -157,11 +157,11 @@ header {
 }
 
 .bk-light{
-  background-color: @gray-lighter;
+  background-color: fade(white, 75%);
   padding: 25px 0;
-  margin-top: 25px;
-  border: solid fade(@gray-base, 15%);
-  border-width: 1px 0 1px;
+  margin: 35px 0;
+  border-top: 1px solid fade(@gray-base, 10%);
+  border-bottom: 2px solid fade(@gray-base, 10%);
   .col-md-12{
     margin-bottom: 20px;
   }

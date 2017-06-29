@@ -86,6 +86,6 @@
   </div>
 </div>
 
-@include('partials.itemrelacionados')
+@include('web.partials.itemrelacionados')
 
 @endsection

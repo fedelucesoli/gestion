@@ -67,7 +67,8 @@ gulp.task('connect-sync', function () {
     connect.server({
         port: 8079,
         base: 'public',
-        open: true
+        open: true,
+        debug: true
     });
 
     var proxy   = httpProxy.createProxyServer({});

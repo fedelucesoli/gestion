@@ -29,7 +29,7 @@
       @include('frontend.index.head')
   @endif --}}
 
-   @include('partials/header')
+   @include('web/partials/header')
 
     <div id="app">
         {{-- <nav class="navbar navbar-default navbar-static-top">
@@ -89,6 +89,8 @@
         </nav> --}}
 
         @yield('content')
+        @include('web/partials/newsletter')
+
     </div>
     <footer>
       <div class="container">

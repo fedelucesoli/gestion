@@ -3,9 +3,9 @@
     <div class="row">
         <div class="col-md-12 text-center">
           <h2>Más obras</h2>
-          <div class="top"></div>  
+          <div class="top"></div>
         </div>
-        @each('partials.carditem', $itemrelacionados, 'item')
+        @each('web.partials.carditem', $itemrelacionados, 'item')
 
     </div>
   </div>
