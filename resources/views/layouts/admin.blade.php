@@ -29,8 +29,7 @@
 <body>
    {{-- @include('partials/header') --}}
 
-    <div id="app">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="border-bottom: 1px solid black">
             <div class="container">
                 <div class="navbar-header">
                     <!-- Collapsed Hamburger -->
@@ -85,6 +84,7 @@
                 </div>
             </div>
         </nav>
+        {{-- <div class="app"> --}}
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
@@ -101,7 +101,7 @@
             </div>
           </div>
         </div>
-    </div>
+    {{-- </div> --}}
 
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
