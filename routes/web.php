@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', 'WebController@index')->name('inicio');
+Route::get('/mapa', 'WebController@indexmapa')->name('iniciomapa');
 Route::get('/item/{id}', 'WebController@item')->name('web.item.detalle');
 
 // Route::get('logout', 'Auth\AuthController@getLogout');

@@ -37,12 +37,8 @@
     </div>
     <div class="col-md-6">
       <div id="slider" class="carousel slide" data-ride="carousel">
-
-    <!-- Indicators -->
-        @if ($item->images->count() > 1)
+      @if ($item->images->count() > 1)
           <ol class="carousel-indicators">
-
-
         @foreach ($item->images as $key)
           @if ($loop->first)
               <li data-target="#slider" data-slide-to="{{$loop->index}}" class="active"></li>
@@ -50,7 +46,7 @@
               <li data-target="#slider" data-slide-to="{{$loop->index}}" class=""></li>
           @endif
         @endforeach
-      </ol>
+        </ol>
 
       <!-- Controls -->
       <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
@@ -65,7 +61,7 @@
       @endif
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style=" width:100%; height: 250px !important; margin-bottom: 20px;">
+    <div class="carousel-inner" role="listbox" style=" width:100%; height: 350px !important; margin-bottom: 20px;">
       @foreach($item->images as $image)
           @if ($loop->first)
             <div class="item active">
@@ -73,17 +69,21 @@
             <div class="item">
           @endif
           <img src="{{asset("uploads/full_size/$image->filename")}}" alt="{{$item->titulo}}">
-            </div>
+          </div>
+          <div class="item">
+            {!!$map['html']!!}
+          </div>
+
       @endforeach
     </div>
 
 
   </div>
-  {!!$map['html']!!}
 
     </div>
 
   </div>
+</div>
 </div>
 
 @include('web.partials.itemrelacionados')

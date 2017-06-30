@@ -89,7 +89,10 @@
         </nav> --}}
 
         @yield('content')
-        @include('web/partials/newsletter')
+        
+        @if (@isset($newsletter) && $newsletter === true)
+          @include('web/partials/newsletter')
+        @endif
 
     </div>
     <footer>

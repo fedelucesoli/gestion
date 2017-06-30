@@ -47,11 +47,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        <li><a href="{{route('admin.item.add')}}">Agregar</a></li>
-                        <li><a href="{{route('admin.item.list')}}">Listado</a></li>
-                    </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -90,9 +86,8 @@
             <div class="col-sm-3 col-md-2 sidebar">
               <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">Escritorio <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
+                <li {{{ (Request::is('/items/add') ? 'active' : 'fede') }}}><a href="{{route('admin.item.add')}}">Agregar</a></li>
+                <li {{{ (Request::is('/items/list') ? 'class=active' : '') }}}><a href="{{route('admin.item.list')}}">Listado</a></li>
               </ul>
             </div>
 
