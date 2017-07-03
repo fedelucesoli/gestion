@@ -16,4 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/item/{id}', 'WebController@itemAjax');
+
+Route::get('item/{id}', 'ApiController@item');
+// Route::get('item',function (Request $request) {
+//   return 'fede';
+// });

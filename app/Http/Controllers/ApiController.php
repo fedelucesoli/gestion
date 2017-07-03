@@ -8,7 +8,7 @@ use GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade as Gmaps;
 use App\Items;
 use App\Image;
 
-class WebController extends Controller
+class ApiController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -28,19 +28,7 @@ class WebController extends Controller
     {
       $data['items'] = Items::all();
       $data['newsletter'] = true;
-
-      $config = array();
-      $config['center'] = '-35.1870349, -59.0949762';
-      $config['map_width'] = '100%';
-      $config['map_height'] = 800;
-      $config['zoom'] = 12;
-      $config['loadAsynchronously '] = true;
-      
-      Gmaps::initialize($config);
-
-      $data['map'] = Gmaps::create_map();
-      return view('inicio', $data);
-
+        return view('inicio', $data);
     }
 
     public function indexmapa()
@@ -85,12 +73,15 @@ class WebController extends Controller
       if(is_null($data['item'])){
         return redirect()->route('inicio');
       }
-      $latlng= $data['item']->lat . ', '. $data['item']->lng;
+      $latlng = $data['item']->lat . ', '. $data['item']->lng;
       $config = array();
       $config['center'] = $latlng;
       $config['map_width'] = '100%';
       $config['map_height'] = 350;
       $config['zoom'] = 15;
+      $config['loadAsynchronously '] = true;
+      $config['jsfile'] = 'assets/js/map.js';
+
       $marker = array();
       $marker['position'] = $latlng;
       Gmaps::add_marker($marker);
@@ -98,32 +89,9 @@ class WebController extends Controller
 
       $data['map'] = Gmaps::create_map();
 
-      return view('web.itemficha', $data);
+      // return response()->json($data);
+      return view('web.partials.ficha', $data);
+
     }
-    public function itemAjax($id){
 
-      $data['item'] = Items::find($id);
-      $data['itemrelacionados'] = Items::where('categoria', $data['item']->categoria)
-                                  ->where('id', '!=', $data['item']->id)
-                                  ->limit(3)
-                                  ->get();
-
-      if(is_null($data['item'])){
-        return redirect()->route('inicio');
-      }
-      $latlng= $data['item']->lat . ', '. $data['item']->lng;
-      $config = array();
-      $config['center'] = $latlng;
-      $config['map_width'] = '100%';
-      $config['map_height'] = 350;
-      $config['zoom'] = 15;
-      $marker = array();
-      $marker['position'] = $latlng;
-      Gmaps::add_marker($marker);
-      Gmaps::initialize($config);
-
-      $data['map'] = Gmaps::create_map();
-
-      return view('web.itemficha', $data);
-    }
 }
