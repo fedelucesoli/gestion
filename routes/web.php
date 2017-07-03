@@ -13,6 +13,7 @@
 Route::get('/', 'WebController@index')->name('inicio');
 Route::get('/mapa', 'WebController@indexmapa')->name('iniciomapa');
 Route::get('/item/{id}', 'WebController@item')->name('web.item.detalle');
+Route::get('/categoria/{id}', 'WebController@categoria')->name('web.categoria.list');
 
 // Route::get('logout', 'Auth\AuthController@getLogout');
 // Route::get('admin/login', 'Auth\LoginController');

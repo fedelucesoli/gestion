@@ -17,6 +17,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="{{url('/')}}">Inicio</a></li>
+        <li><a href="">Library</a></li>
+        <li class="active">Data</li>
+      </ol>
+    </div>
+    <div class="col-md-12">
       <h1>{{$item->titulo}}</h1>
       <div class="top-left"></div>
     </div>
@@ -24,12 +31,19 @@
     <div class="col-md-6">
       <div class="ficha">
         <p class="">{{$item->descripcion}}</p>
-        Categoria: {{$item->categoria}}<br>
-        Fecha de inicio: {{date('d-m-Y', strtotime($item->fecha_inicio))}}<br>
-        Fecha de finalizacion: {{date('d-m-Y', strtotime($item->fecha_fin))}}
-
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <span class="detalle">Fecha de inicio</span>
+            {{date('d-m-Y', strtotime($item->fecha_inicio))}}
+          </div>
+          <div class="col-md-6">
+            <span class="detalle">Fecha de finalizacion</span>
+            {{date('d-m-Y', strtotime($item->fecha_fin))}}
+          </div>
+        </div>
       </div>
-      <div class="redes">
+      <div c lass="redes">
         Compartí esta obra en tus redes.
 
       </div>

@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     uglify = require('gulp-uglify'),
     connect = require('gulp-connect-php'),
-    httpProxy = require('http-proxy');
+    httpProxy = require('http-proxy'),
+    concat = require('gulp-concat'),
+    gulpCopy = require('gulp-copy');
 
 
 gulp.task('images', function(cb) {
@@ -17,7 +19,6 @@ gulp.task('images', function(cb) {
     })).pipe(gulp.dest('public/img/')).on('end', cb).on('error', cb);
 });
 
-
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
     return gulp.src('resources/assets/less/gestion.less')
@@ -27,6 +28,15 @@ gulp.task('less', function() {
             stream: true
         }))
 });
+gulp.task('copy', function() {
+  gulp.src([
+    'node_modules/izimodal/js/iziModal.js',
+    'node_modules/izimodal/css/iziModal.min.css',
+  ])
+  .pipe(gulp.dest('public/assets/plugins'));
+});
+
+
 gulp.task('lessAdmin', function() {
     return gulp.src('resources/assets/less/admin.less')
         .pipe(less())
@@ -47,9 +57,15 @@ gulp.task('minify-css', ['less'], function() {
         }))
 });
 
+gulp.task('scripts', function() {
+  return gulp.src('resources/assets/js/*.js')
+    .pipe(concat('gestion.js'))
+    .pipe(gulp.dest('public/assets/js/'));
+});
+
 // Minify JS
 gulp.task('minify-js', function() {
-    return gulp.src('resources/assets/js/gestion.js')
+    return gulp.src('public/assets/js/gestion.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('public/assets/js'))
@@ -57,8 +73,6 @@ gulp.task('minify-js', function() {
             stream: true
         }))
 });
-
-
 
 // Run everything
 gulp.task('default', ['less', 'minify-css', 'minify-js']);
@@ -92,12 +106,18 @@ gulp.task('connect-sync', function () {
     });
 });
 
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "localhost:8888/gestion/public"
+    });
+});
+
 // Dev task with browserSync
-gulp.task('dev', ['connect-sync', 'less', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browser-sync', 'less', 'scripts', 'minify-css', 'minify-js'], function() {
     gulp.watch('resources/assets/less/*.less', ['less']);
     gulp.watch('resources/assets/less/admin.less', ['lessAdmin']);
     gulp.watch('public/assets/css/*.css', ['minify-css']);
-    gulp.watch('resources/assets/js/*.js', ['minify-js']);
+    gulp.watch('resources/assets/js/*.js', ['scripts']);
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('resources/views/*/*.php', browserSync.reload);
     gulp.watch('resources/views/*.php', browserSync.reload);

@@ -23,11 +23,6 @@
 
 </head>
 <body>
-  {{-- @if (Request::is('backend/*'))
-      @include('backend.index.head')
-  @else
-      @include('frontend.index.head')
-  @endif --}}
 
    @include('web/partials/header')
 
@@ -89,7 +84,7 @@
         </nav> --}}
 
         @yield('content')
-        
+
         @if (@isset($newsletter) && $newsletter === true)
           @include('web/partials/newsletter')
         @endif
@@ -106,6 +101,7 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/gestion.min.js') }}"></script>
     @stack('scripts')
 
 </body>
