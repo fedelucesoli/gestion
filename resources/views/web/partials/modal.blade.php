@@ -12,13 +12,12 @@
 
   <script type="text/javascript">
   $('#ficha').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var idrequest = button.data('id') // Extract info from data-* attributes
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var button = $(event.relatedTarget);
+  var idrequest = button.data('id');
   $.get( "api/item/"+idrequest)
-  .done(function( data ) {
-    $('#ficha .modal-body').html(data);
-  });
+    .done(function( data ) {
+      $('#ficha .modal-body').html(data);
+    });
   })
   </script>
    <script type="text/javascript">var centreGot = false;</script>

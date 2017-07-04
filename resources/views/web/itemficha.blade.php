@@ -1,105 +1,72 @@
 @extends('layouts.app')
 
-@push('css')
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-@endpush
-
-@push('scripts')
-<script type="text/javascript">
-  $('.carousel').carousel();
-</script>
-@endpush
 
 @section('content')
-<script type="text/javascript">var centreGot = false;</script>{!!$map['js']!!}
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <ol class="breadcrumb">
-        <li><a href="{{url('/')}}">Inicio</a></li>
-        <li><a href="">Library</a></li>
-        <li class="active">Data</li>
-      </ol>
-    </div>
-    <div class="col-md-12">
-      <h1>{{$item->titulo}}</h1>
-      <div class="top-left"></div>
-    </div>
-
+  <div class="ficha">
+    <div class="row">
     <div class="col-md-6">
-      <div class="ficha">
-        <p class="">{{$item->descripcion}}</p>
-        <hr>
-        <div class="row">
-          <div class="col-md-6">
-            <span class="detalle">Fecha de inicio</span>
-            {{date('d-m-Y', strtotime($item->fecha_inicio))}}
-          </div>
-          <div class="col-md-6">
-            <span class="detalle">Fecha de finalizacion</span>
-            {{date('d-m-Y', strtotime($item->fecha_fin))}}
-          </div>
-        </div>
-      </div>
-      <div c lass="redes">
-        Compartí esta obra en tus redes.
-
-      </div>
-
-    </div>
-    <div class="col-md-6">
-      <div id="slider" class="carousel slide" data-ride="carousel">
-      @if ($item->images->count() > 1)
-          <ol class="carousel-indicators">
-        @foreach ($item->images as $key)
-          @if ($loop->first)
-              <li data-target="#slider" data-slide-to="{{$loop->index}}" class="active"></li>
-          @else
-              <li data-target="#slider" data-slide-to="{{$loop->index}}" class=""></li>
-          @endif
-        @endforeach
+      <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          @foreach ($item->images as $key)
+            @if ($loop->first)
+                <li data-target="#slider" data-slide-to="{{$loop->index}}" class="active"></li>
+            @else
+                <li data-target="#slider" data-slide-to="{{$loop->index}}" class=""></li>
+            @endif
+          @endforeach
+          <li data-target="#slider" data-slide-to="{{count($item->images)}}" class=""></li>
         </ol>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        <span class="sr-only">Anterior</span>
-      </a>
-      <a class="right carousel-control" href="#slider" role="button" data-slide="next">
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <span class="sr-only">Próxima</span>
-      </a>
+        <div class="carousel-inner" id="slider" role="listbox">
+          @foreach($item->images as $image)
+              @if ($loop->first)
+                <div class="item active">
+              @else
+                <div class="item">
+              @endif
+                <img src="{{asset("uploads/full_size/$image->filename")}}" alt="{{$item->titulo}}">
+              </div>
+          @endforeach
+              <div class="item">
+                {!!$map['html']!!}
+              </div>
+        </div>
 
-      @endif
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style=" width:100%; height: 350px !important; margin-bottom: 20px;">
-      @foreach($item->images as $image)
-          @if ($loop->first)
-            <div class="item active">
-          @else
-            <div class="item">
-          @endif
-          <img src="{{asset("uploads/full_size/$image->filename")}}" alt="{{$item->titulo}}">
-          </div>
-          <div class="item">
-            {!!$map['html']!!}
-          </div>
-
-      @endforeach
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-slider" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-slider" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
 
+    <div class="col-md-6">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <a href=""><h6>{{$item->categoria}}</h6></a>
+      <h2>{{$item->titulo}}</h2>
+      <div class="top-left"></div>
+      <div class="ficha">
+        <p>{{$item->descripcion}}</p>
+        <hr>
+        <span class="detalle">Fecha de inicio</span>
+        <p>{{date('d-m-Y', strtotime($item->fecha_inicio))}}</p>
 
-  </div>
+
+        <span class="detalle">Fecha de finalizacion</span>
+        <p>{{date('d-m-Y', strtotime($item->fecha_fin))}}</p>
+      </div>
 
     </div>
-
+  </div>
   </div>
 </div>
-</div>
-
 @include('web.partials.itemrelacionados')
 
 @endsection

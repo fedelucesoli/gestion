@@ -1,6 +1,7 @@
-<div class="row">
+<div class="ficha">
+  <div class="row">
   <div class="col-md-6">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         @foreach ($item->images as $key)
@@ -13,7 +14,6 @@
         <li data-target="#slider" data-slide-to="{{count($item->images)}}" class=""></li>
       </ol>
 
-      <!-- Wrapper for slides -->
       <div class="carousel-inner" id="slider" role="listbox">
         @foreach($item->images as $image)
             @if ($loop->first)
@@ -58,6 +58,6 @@
 
   </div>
 </div>
-
+</div>
 @push('scripts')
 @endpush

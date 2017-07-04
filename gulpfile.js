@@ -113,7 +113,7 @@ gulp.task('browser-sync', function() {
 });
 
 // Dev task with browserSync
-gulp.task('dev', ['browser-sync', 'less', 'scripts', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['connect-sync', 'less', 'scripts', 'minify-css', 'minify-js'], function() {
     gulp.watch('resources/assets/less/*.less', ['less']);
     gulp.watch('resources/assets/less/admin.less', ['lessAdmin']);
     gulp.watch('public/assets/css/*.css', ['minify-css']);

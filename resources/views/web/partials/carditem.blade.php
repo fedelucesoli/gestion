@@ -1,5 +1,5 @@
     <div class="grid-item col-md-4 col-sm-6 col-xs-12">
-      <div class=" grid-item-content card-obra">
+      <div class="grid-item-content card-obra">
         <div class="loading"></div>
 
         @foreach ($item->images as $image)
@@ -16,8 +16,9 @@
         @endforeach
 
           <div class="detalles">
-            <a class="categoria" href='{{ url("categoria/"+str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
-            <a  data-toggle="modal" data-target="#ficha" data-id="{{$item->id}}">
+            <a class="categoria" href='{{ url("categoria/"+ str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
+            {{-- <a data-toggle="modal" data-target="#ficha" data-id="{{$item->id}}"> --}}
+            <a href='{{url("item/$item->id")}}'>
               <h4>{{ $item->titulo }}</h4>
             </a>
           </div>

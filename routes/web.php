@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', 'WebController@index')->name('inicio');
-Route::get('/mapa', 'WebController@indexmapa')->name('iniciomapa');
+Route::get('/mapa', 'WebController@indexmapa')->name('mapa');
 Route::get('/item/{id}', 'WebController@item')->name('web.item.detalle');
 Route::get('/categoria/{id}', 'WebController@categoria')->name('web.categoria.list');
 

@@ -101,7 +101,6 @@
   }
 }
 footer {
-  margin-top: 50px;
   border-top: 1px solid #df3837;
   padding: 15px 0;
 }
@@ -243,6 +242,13 @@ header .header-content h1 {
 .ficha {
   margin-top: 25px;
 }
+.ficha .detalle {
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  display: inline-block;
+  border-bottom: 1px solid #2C2F36;
+}
 .redes {
   position: absolute;
   bootom: 0;
@@ -256,4 +262,9 @@ header .header-content h1 {
 }
 .bk-light .col-md-12 {
   margin-bottom: 20px;
+}
+.newsletter {
+  background: rgba(44, 47, 54, 0.1);
+  padding: 25px 0;
+  margin-top: 90px;
 }

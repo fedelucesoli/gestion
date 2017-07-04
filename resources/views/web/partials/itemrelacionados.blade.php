@@ -6,7 +6,6 @@
           <div class="top"></div>
         </div>
         @each('web.partials.carditem', $itemrelacionados, 'item')
-
     </div>
   </div>
 </section>
