@@ -8,12 +8,12 @@
 
 				 function initialize_map() {
 
-				var myLatlng = new google.maps.LatLng(-35.1771057, -59.0930571);
+				var myLatlng = new google.maps.LatLng(-35.1793507, -59.0912560);
 				var myOptions = {
 			  		zoom: 15,
 					center: myLatlng,
 			  		mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			var myLatlng = new google.maps.LatLng(-35.1771057, -59.0930571);
+			var myLatlng = new google.maps.LatLng(-35.1793507, -59.0912560);
 			
 			var markerOptions = {
 				map: map,

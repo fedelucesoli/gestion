@@ -11,17 +11,29 @@
 |
 */
 Route::get('/', 'WebController@index')->name('inicio');
+
+// 404 Municipio de lobos 
+// Route::get('/', 'WebController@index')->name('inicio');
+
+
+// landings eventos
+    // Controlador unico
+
+// landing patrullas, vacunacion, programas
+
+// backend general
+  // backend gis
+  // backend obras
+  // backend eventos
+  // backend landings
+  // backend
+
+
+
+// Group OBRAS
 Route::get('/mapa', 'WebController@indexmapa')->name('mapa');
 Route::get('/item/{id}', 'WebController@item')->name('web.item.detalle');
 Route::get('/categoria/{id}', 'WebController@categoria')->name('web.categoria.list');
-
-// Route::get('logout', 'Auth\AuthController@getLogout');
-// Route::get('admin/login', 'Auth\LoginController');
-
-
-
-
-
 
 Auth::routes();
 
