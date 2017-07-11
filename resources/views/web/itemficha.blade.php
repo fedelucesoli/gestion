@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="container">
-  <div class="ficha">
+  <div class="ficha box-linea">
     <div class="row">
     <div class="col-md-6">
       <div id="carousel-slider" class="carousel slide" data-ride="carousel">
@@ -49,7 +49,7 @@
 
     <div class="col-md-6">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <a href=""><h6>{{$item->categoria}}</h6></a>
+      <a href=""><h4>{{$item->categoria}}</h4></a>
       <h2>{{$item->titulo}}</h2>
       <div class="top-left"></div>
       <div class="ficha">

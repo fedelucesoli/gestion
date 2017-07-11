@@ -1,4 +1,4 @@
-<div class="ficha">
+<div class="ficha box-linea">
   <div class="row">
   <div class="col-md-6">
     <div id="" class="carousel slide" data-ride="carousel">

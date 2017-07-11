@@ -37,10 +37,10 @@ gulp.task('copy', function() {
 });
 
 
-gulp.task('lessAdmin', function() {
-    return gulp.src('resources/assets/less/admin.less')
+gulp.task('lobostrap', function() {
+    return gulp.src('resources/assets/less/lobostrap/lobostrap.less')
         .pipe(less())
-        .pipe(gulp.dest('public/assets/css'))
+        .pipe(gulp.dest('public/assets/css/lobostrap'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -81,7 +81,7 @@ gulp.task('connect-sync', function () {
     connect.server({
         port: 8079,
         base: 'public',
-        open: true,
+        open: false,
         debug: true
     });
 
@@ -108,13 +108,14 @@ gulp.task('connect-sync', function () {
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "localhost:8888/gestion/public"
+        proxy: "localhost:8079/gestion/public"
     });
 });
 
 // Dev task with browserSync
-gulp.task('dev', ['connect-sync', 'less', 'scripts', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['connect-sync', 'less', 'lobostrap', 'scripts', 'minify-css', 'minify-js'], function() {
     gulp.watch('resources/assets/less/*.less', ['less']);
+    gulp.watch('resources/assets/less/lobostrap/*.less', ['lobostrap']);
     gulp.watch('resources/assets/less/admin.less', ['lessAdmin']);
     gulp.watch('public/assets/css/*.css', ['minify-css']);
     gulp.watch('resources/assets/js/*.js', ['scripts']);

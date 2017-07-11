@@ -11,8 +11,9 @@
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/css/lobostrap/lobostrap.css') }}" rel="stylesheet">
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('css')
