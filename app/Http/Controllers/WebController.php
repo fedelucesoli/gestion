@@ -35,7 +35,7 @@ class WebController extends Controller
       $config['map_height'] = 800;
       $config['zoom'] = 12;
       $config['loadAsynchronously '] = true;
-      
+
       Gmaps::initialize($config);
 
       $data['map'] = Gmaps::create_map();
@@ -93,6 +93,7 @@ class WebController extends Controller
       $config['zoom'] = 15;
       $marker = array();
       $marker['position'] = $latlng;
+      // $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|9999FF|000000';
       Gmaps::add_marker($marker);
       Gmaps::initialize($config);
 
