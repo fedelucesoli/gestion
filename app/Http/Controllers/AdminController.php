@@ -12,34 +12,23 @@ use App\Items;
 use App\Image;
 
 
-class AdminController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+class AdminController extends Controller{
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('admin.dashboard');
+
+    public function index(){
+        $data['items'] = Items::all();
+
+        return view('admin.dashboard', $data);
     }
 
-    public function itemsList()
-    {
+    public function itemsList(){
       $data['items'] = Items::all();
-      
       return view('admin.itemslist', $data);
-
     }
 
     public function itemsCreate(){
@@ -56,19 +45,15 @@ class AdminController extends Controller
       ';
 
       Gmaps::initialize($config);
-
       $data['map'] = Gmaps::create_map();
-
       return view('admin.itemadd', $data);
     }
 
 
 
-    public function itemsAdd(Request $request)
-    {
+    public function itemsAdd(Request $request){
 
         $item = new Items;
-
         $item->titulo = $request->titulo;
         $item->descripcion = $request->descripcion;
         $item->categoria = $request->categoria;
@@ -76,9 +61,7 @@ class AdminController extends Controller
         $item->fecha_fin = $request->fecha_fin;
         $item->lat = $request->lat;
         $item->lng = $request->lng;
-
         $item->save();
-
 
         $data['id_item'] = $item->id;
         return redirect()->route('admin.item.image', $data);
@@ -93,7 +76,6 @@ class AdminController extends Controller
 
 
     }
-
 
     protected $image;
     public function postUpload(Request $request, ImageRepository $imageRepository){

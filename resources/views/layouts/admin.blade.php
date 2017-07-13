@@ -15,11 +15,13 @@
 
     <!-- Bootstrap -->
 
-    <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet"> --}}
 
-    {{-- <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/css/lobostrap/lobostrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dist/bootstrap-base.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/animate.css') }}" rel="stylesheet">
+
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('css')
@@ -27,76 +29,58 @@
 
 </head>
 <body>
-   {{-- @include('partials/header') --}}
+   @include('admin.partials/header')
 
-        <nav class="navbar navbar-inverse navbar-fixed-top" style="border-bottom: 1px solid black">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+   {{-- @if (Auth::guest())
+       <li><a href="{{ route('login') }}">Login</a></li>
+       <li><a href="{{ route('register') }}">Register</a></li>
+   @else
+       <li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+               {{ Auth::user()->name }} <span class="caret"></span>
+           </a>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Gestion Lobos
-                    </a>
-                </div>
+           <ul class="dropdown-menu" role="menu">
+               <li>
+                   <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                       Logout
+                   </a>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                       {{ csrf_field() }}
+                   </form>
+               </li>
+           </ul>
+       </li>
+   @endif --}}
 
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {{-- <div class="app"> --}}
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
+            <div class="col-sm-3 col-md-2">
               <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Escritorio <span class="sr-only">(current)</span></a></li>
-                <li {{{ (Request::is('/items/add') ? 'active' : 'fede') }}}><a href="{{route('admin.item.add')}}">Agregar</a></li>
-                <li {{{ (Request::is('/items/list') ? 'class=active' : '') }}}><a href="{{route('admin.item.list')}}">Listado</a></li>
+                <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="#">Escritorio <span class="sr-only">(current)</span></a></li>
+                <li class="{{ Request::is('items/add') ? 'active' : '' }}"><a href="{{route('admin.item.add')}}">Agregar</a></li>
+                <li class="{{ (Request::is('items/list') ? 'active' : '') }}"><a href="{{route('admin.item.list')}}">Listado</a></li>
               </ul>
             </div>
 
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="col-sm-9 col-md-10 main">
               @yield('content')
             </div>
           </div>
         </div>
-    {{-- </div> --}}
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              {{-- todo: iconos de las redes sociales y link a la pagina web --}}
+              <div class="col-md-12 text-right"> 2017 - Municipio de Lobos </div>
+            </div>
+          </div>
+        </footer>
+
 
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}

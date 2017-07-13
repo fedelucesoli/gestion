@@ -3,7 +3,7 @@
 
 @section('content')
   <script type="text/javascript">var centreGot = false;</script>{!!$map['js']!!}
-
+  <div class="box-linea">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3"><h3>Agregar item</h3></div>
   </div>
@@ -93,5 +93,6 @@
         </div>
        </div>
     </form>
+  </div>
   </div>
 @endsection

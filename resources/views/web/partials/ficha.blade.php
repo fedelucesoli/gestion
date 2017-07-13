@@ -6,15 +6,14 @@
 
       {{-- TODO hrefs --}}
       <ol class="breadcrumb" style="display:inline-block">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="{{ url('/')}}">Inicio</a></li>
         <li class="active"><a href="#">{{ $item->categoria }}</a></li>
       </ol>
-      <span class="pull-right"><a href="">Volver </a></span>
+      <span class="pull-right"><a href="{{ url()->previous() }}">Volver </a></span>
 
       <h1>{{$item->titulo}}</h1>
       <p>{{$item->descripcion}}</p>
 
-      {{-- compartir --}}
 
 
 
@@ -42,20 +41,38 @@
 
       </div>
 
+      <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your share button code -->
+        <div class="fb-share-button"
+          data-href="http://www.your-domain.com/your-page.html"
+          data-layout="button_count">
+        </div>
+
 
       {{-- TODO BOTONES --}}
       <div class="detalle">
         <h4 class="text-center">Compartí estas obras en tus redes.</h4>
-        <div class="row">
-            <div class="text-center col-xs-4 col-sm-12 col-md-4 col-lg-4  col-md-4 shareItem">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://apps.moron.gob.ar/obras" target="_blank" class="btn btn-sm btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span> Facebook</a>
-            </div>
-            <div class="text-center col-xs-4 col-sm-12 col-md-4 col-lg-4 shareItem">
-                <a href="https://twitter.com/share?size=large&amp;text=Obras+que+transforman+tu+vida&amp;url=https%3A%2F%2Fapps.moron.gob.ar%2Fobras&amp;hashtags=Obras%2C+Moron+Gobierno%2C+Corazon+del+Oeste+%2C+Zona+Oeste+%2C+Cambiemos%2C+Tagliafierro&amp;via=morongobierno&amp;related=Municipio+de+Moron" target="_blank" class="btn btn-sm btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span> Twitter</a>
-            </div>
-            <div style="" class="text-center col-xs-4 col-sm-12 col-md-4 col-lg-4 shareItem">
-                <a href="https://plus.google.com/share?url=https://apps.moron.gob.ar/obras" target="_blank" class="btn btn-sm btn-round btn-o btn-google"><span class="fa fa-google-plus"></span> Google+</a>
-            </div>
+        <div class="row text-center">
+          <a href="https://twitter.com/minimalmonkey" class="icon-button twitter">
+            <i class="icon-twitter"></i>
+            <span> Twitter </span>
+          </a>
+          <a href="{{Request::url()}}" data-href="{{Request::url()}}" class="icon-button facebook">
+            <i class="icon-facebook"></i>
+            <span> Facebook </span>
+          </a>
+          <a href="https://plus.google.com" class="icon-button google-plus">
+            <i class="icon-google-plus"></i>
+            <span> Google +</span>
+          </a>
         </div>
       </div>
     </div>

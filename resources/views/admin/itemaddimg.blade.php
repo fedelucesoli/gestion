@@ -41,31 +41,27 @@ Dropzone.options.realDropzone = {
 
 @section('content')
 
-  <link rel="stylesheet" href="{{asset('vendor/dropzone.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/vendor/dropzone.css')}}">
 
       <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-              <div class="panel panel-default">
-                  <div class="panel-heading">Dashboard</div>
+          <div class="col-md-8 col-md-offset-2 box-linea">
+              <h2 class="text-center">Dashboard</h2>
+              <form class="dropzone dz-clickable" action="{{route('admin.image.upload')}}" method="post" id="my-awesome-dropzone"  enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <input type="hidden" name="id_item" value="{{ $id_item }}">
+              <div class="dz-message"></div>
 
-                  <div class="panel-body">
+              <div class="fallback">
+                  <input name="file" type="file" multiple />
+              </div>
 
-  <form class="dropzone dz-clickable" action="{{route('admin.image.upload')}}" method="post" id="my-awesome-dropzone"  enctype="multipart/form-data">
-    {{ csrf_field() }}
-    <input type="hidden" name="id_item" value="{{ $id_item }}">
-  <div class="dz-message"></div>
+              <div class="dropzone-previews" id="dropzonePreview"></div>
 
-  <div class="fallback">
-      <input name="file" type="file" multiple />
-  </div>
+              <h4 style="text-align: center;">Arrastra y suelta las imagenes aquí<span class="glyphicon glyphicon-hand-down"></span></h4>
 
-  <div class="dropzone-previews" id="dropzonePreview"></div>
-
-  <h4 style="text-align: center;color:#428bca;">Drop images in this area  <span class="glyphicon glyphicon-hand-down"></span></h4>
-
-  </form>
+              </form>
   <br>
-  <a href="{{route('admin.item.list')}}" id='submitfiles' class='btn btn-primary'>Guardar y ver publicación</a>
+  <a href="{{route('admin.item.list')}}" id='submitfiles' class='btn btn-primary'>Guardar</a>
 
   <!-- Dropzone Preview Template -->
       <div id="preview-template" style="display: none;">

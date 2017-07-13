@@ -3,10 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Iniciar Sesión</div>
-                <div class="panel-body">
+        <div class="col-md-8 col-md-offset-2 box-linea">
+                <h2 class="text-center">Iniciar Sesión</h2>
+
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -61,8 +60,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
     </div>
 </div>
 @endsection

@@ -110,3 +110,29 @@
     border-top: 1px solid @primario;
     padding: 15px 0;
 }
+
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+  list-style: none;
+  & li{
+
+  }
+}
+.nav-sidebar > li > a {
+  display: block;
+  padding: 10px;
+  &:hover{
+    color: #fff;
+    background-color: @primario;
+  }
+
+  // border-bottom: 1px solid black;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar >  a:hover,
+.nav-sidebar >  a:focus {
+  color: #fff;
+  background-color: @primario;
+}
