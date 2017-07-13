@@ -123,6 +123,7 @@ gulp.task('browser-sync', function() {
 gulp.task('dev', ['connect-sync', 'less', 'lobostrap', 'scripts', 'minify-css', 'minify-js'], function() {
     gulp.watch('resources/assets/less/*.less', ['less']);
     gulp.watch('resources/assets/less/lobostrap/*/*.less', ['lobostrap']);
+    gulp.watch('resources/assets/less/lobostrap/*.less', ['lobostrap']);
     gulp.watch('resources/assets/less/admin.less', ['lessAdmin']);
     gulp.watch('public/assets/css/*.css', ['minify-css']);
     gulp.watch('resources/assets/js/*.js', ['scripts']);

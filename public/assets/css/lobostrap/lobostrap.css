@@ -8,6 +8,9 @@
 .body-font {
   font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 }
+.border-radius {
+  border-radius: 5px;
+}
 .navbar {
   min-height: 0;
 }
@@ -659,6 +662,10 @@ ol ol {
 .item {
   height: 400px;
 }
+.item img {
+  border-radius: 3px;
+  border-radius: 5px;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -702,6 +709,10 @@ body {
 }
 .ficha .detalle {
   padding: 25px 0;
+}
+#map_canvas {
+  border-radius: 3px;
+  border-radius: 5px;
 }
 .progreso {
   position: relative;
