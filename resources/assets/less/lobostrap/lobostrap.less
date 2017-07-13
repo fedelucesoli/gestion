@@ -6,6 +6,7 @@
 @import "text.less";
 @import "includes/media.less";
 @import "includes/galeria.less";
+@import "includes/progreso.less";
 
 body{
   -webkit-font-smoothing: antialiased;
@@ -45,13 +46,15 @@ body{
 
  .box-linea{
    background-color: white;
-   border-top: 1px solid @primario;
-   border-bottom: 1px solid @primario;
-   padding: 10px 15px;
+  //  border-top: 1px solid rgba(57, 60, 84, 0.9);
+  //  border-bottom: 1px solid rgba(57, 60, 84, 0.9);
+  box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
+    // background-clip: padding-box;
+   padding: 50px 25px;
  }
 
 .ficha{
-  padding: 50px 15px;
+  // padding: 50px 15px;
   .detalle{
     padding: 25px 0;
   }
@@ -63,40 +66,65 @@ body{
 }
 
 //
-// Barra de progreso
+// CARD
 //
-
-.progreso{
+.card-obra{
   position: relative;
-  .descripcion{
-    font-size: 18px;
-    color: rgba(43,45,66,0.9);
+  margin: 15px 0;
+  box-sizing: border-box;
+  background-color: white;
+  .transition-all;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  .border-radius;
+  a:hover{
+    text-decoration: none;
+    color: gray;
   }
-
-  .fecha{
-    font-weight: 700;
-    // font-size: 12px;
+  a > h4{
     color: @gray-base;
+
   }
-}
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(0,0,0,.2);
+    .transition-all;
+  }
 
-.timeline {
-  overflow: hidden;
-  height: 4px;
-  margin: 10px auto;
-  background-color: @bg-light;
-  // .box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
-}
+  .back-img{
+    height: 250px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  .detalles{
+    padding: 15px;
 
-.timeline-bar {
-  float: left;
-  width: 0%;
-  height: 100%;
-  // font-size: @font-size-small;
-  line-height: 25px;
-  color: gray;
-  text-align: center;
-  background-color: @gray-base;
-  // .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
-  // .transition(width .6s ease);
+
+    h4{
+      // font-weight: 400;
+      font-size: 24px;
+    }
+    .categoria{
+      // position: absolute;
+      // top: 0px;
+      // left: -10px;
+      // padding: 10px 24px;
+      // background-color: @bg-light;
+      // border-left: 3px solid @gray-base;
+      // border-radius: 0 5px 5px 0;
+      // box-shadow: 1px 1px 16px 0 black;
+      text-transform: uppercase;
+      margin-top: 10px;
+      // .sans-serif-font;
+      font-weight: 700;
+      // font-size: .8em;
+      color: fade(@gray-base, 50%);
+    }
+    .categoria:hover{
+      // background-color: fade(@primario, 80%);
+      // color: white;
+      color: fade(@primario, 80%);
+    }
+  }
 }

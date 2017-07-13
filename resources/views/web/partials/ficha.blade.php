@@ -1,63 +1,71 @@
 <div class="ficha box-linea">
   <div class="row">
-  <div class="col-md-6">
-    <div id="" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        @foreach ($item->images as $key)
-          @if ($loop->first)
-              <li data-target="#slider" data-slide-to="{{$loop->index}}" class="active"></li>
-          @else
-              <li data-target="#slider" data-slide-to="{{$loop->index}}" class=""></li>
-          @endif
-        @endforeach
-        <li data-target="#slider" data-slide-to="{{count($item->images)}}" class=""></li>
-      </ol>
+    <div class="col-md-6">
+      @component('web.partials.galeria', ['item' => $item ])
 
-      <div class="carousel-inner" id="slider" role="listbox">
-        @foreach($item->images as $image)
-            @if ($loop->first)
-              <div class="item active">
-            @else
-              <div class="item">
-            @endif
-              <img src="{{asset("uploads/full_size/$image->filename")}}" alt="{{$item->titulo}}">
+      @endcomponent
+
+      <div class="detalle">
+        <h4 class="text-center">Compartí estas obras en tus redes.</h4>
+        <div class="row">
+            <div class="text-center col-xs-4 col-sm-12 col-md-4 col-lg-4  col-md-4 shareItem">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://apps.moron.gob.ar/obras" target="_blank" class="btn btn-sm btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span> Facebook</a>
             </div>
-        @endforeach
-            <div class="item">
-              {!!$map['html']!!}
+            <div class="text-center col-xs-4 col-sm-12 col-md-4 col-lg-4 shareItem">
+                <a href="https://twitter.com/share?size=large&amp;text=Obras+que+transforman+tu+vida&amp;url=https%3A%2F%2Fapps.moron.gob.ar%2Fobras&amp;hashtags=Obras%2C+Moron+Gobierno%2C+Corazon+del+Oeste+%2C+Zona+Oeste+%2C+Cambiemos%2C+Tagliafierro&amp;via=morongobierno&amp;related=Municipio+de+Moron" target="_blank" class="btn btn-sm btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span> Twitter</a>
             </div>
+            <div style="" class="text-center col-xs-4 col-sm-12 col-md-4 col-lg-4 shareItem">
+                <a href="https://plus.google.com/share?url=https://apps.moron.gob.ar/obras" target="_blank" class="btn btn-sm btn-round btn-o btn-google"><span class="fa fa-google-plus"></span> Google+</a>
+            </div>
+        </div>
       </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-  </div>
 
-  <div class="col-md-6">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h6>{{$item->categoria}}</h6>
-    <h2>{{$item->titulo}}</h2>
-    <div class="top-left"></div>
-    <div class="ficha">
+    <div class="col-md-6">
+      <ol class="breadcrumb">
+        <li><a href="#">Inicio</a></li>
+        <li class="active"><a href="#">{{ $item->categoria }}</a></li>
+      </ol>
+
+      <h1>{{$item->titulo}}</h1>
       <p>{{$item->descripcion}}</p>
-      <hr>
-      <span class="detalle">Fecha de inicio</span>
-      {{date('d-m-Y', strtotime($item->fecha_inicio))}}
 
-      <span class="detalle">Fecha de finalizacion</span>
-      {{date('d-m-Y', strtotime($item->fecha_fin))}}
+      {{-- compartir --}}
+
+
+
+      <div class="detalle">
+        <h3 class="alt" class="alt">Estado de la obra</h3>
+
+          <div class="progreso">
+
+            <span class="descripcion">Inicio</span>
+            <span class="descripcion pull-right">Finalización</span>
+
+
+            <div class="timeline">
+              <div class="timeline-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
+            </div>
+
+            <span class="fecha">{{ $item->fecha_inicio}}</span>
+            <span class="fecha pull-right">
+              {{ $item->fecha_fin}}
+            </span>
+
+          </div>
+
+      </div>
+
+      <div class="detalle">
+        <h3 class="alt">Ubicación</h3>
+        {!!$map['html']!!}
+      </div>
+
     </div>
+    {{-- fin div6 --}}
 
   </div>
 </div>
-</div>
-@push('scripts')
-@endpush

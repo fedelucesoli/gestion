@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Raleway:300,400,700');
 .box-shadow {
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
 }
 .heading-font {
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
@@ -277,7 +277,7 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 28px;
+  font-size: 23px;
 }
 h4,
 .h4 {
@@ -310,7 +310,6 @@ a {
 a:hover,
 a:focus {
   color: #c62c1f;
-  text-decoration: underline;
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -666,6 +665,32 @@ ol ol {
   border-radius: 3px;
   border-radius: 5px;
 }
+.progreso {
+  position: relative;
+}
+.progreso .descripcion {
+  font-size: 18px;
+  color: rgba(43, 45, 66, 0.9);
+}
+.progreso .fecha {
+  font-weight: 700;
+  color: #393c54;
+}
+.timeline {
+  overflow: hidden;
+  height: 4px;
+  margin: 10px auto;
+  background-color: #c2b8b2;
+}
+.timeline-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  line-height: 25px;
+  color: gray;
+  text-align: center;
+  background-color: #393c54;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -700,12 +725,8 @@ body {
 }
 .box-linea {
   background-color: white;
-  border-top: 1px solid #e04538;
-  border-bottom: 1px solid #e04538;
-  padding: 10px 15px;
-}
-.ficha {
-  padding: 50px 15px;
+  box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
+  padding: 50px 25px;
 }
 .ficha .detalle {
   padding: 25px 0;
@@ -714,29 +735,51 @@ body {
   border-radius: 3px;
   border-radius: 5px;
 }
-.progreso {
+.card-obra {
   position: relative;
+  margin: 15px 0;
+  box-sizing: border-box;
+  background-color: white;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  border-radius: 5px;
 }
-.progreso .descripcion {
-  font-size: 18px;
-  color: rgba(43, 45, 66, 0.9);
+.card-obra a:hover {
+  text-decoration: none;
+  color: gray;
 }
-.progreso .fecha {
-  font-weight: 700;
+.card-obra a > h4 {
   color: #393c54;
 }
-.timeline {
-  overflow: hidden;
-  height: 4px;
-  margin: 10px auto;
-  background-color: #c2b8b2;
+.card-obra:hover {
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
 }
-.timeline-bar {
-  float: left;
-  width: 0%;
-  height: 100%;
-  line-height: 25px;
-  color: gray;
-  text-align: center;
-  background-color: #393c54;
+.card-obra .back-img {
+  height: 250px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+}
+.card-obra .detalles {
+  padding: 15px;
+}
+.card-obra .detalles h4 {
+  font-size: 24px;
+}
+.card-obra .detalles .categoria {
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 700;
+  color: rgba(57, 60, 84, 0.5);
+}
+.card-obra .detalles .categoria:hover {
+  color: rgba(224, 69, 56, 0.8);
 }

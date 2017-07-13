@@ -1,6 +1,5 @@
     <div class="grid-item col-md-4 col-sm-6 col-xs-12">
-      <div class="grid-item-content card-obra">
-        <div class="loading"></div>
+      <div class="grid-item-content card-obra  animated fadeInUp">
 
         @foreach ($item->images as $image)
           @if ($loop->first)
