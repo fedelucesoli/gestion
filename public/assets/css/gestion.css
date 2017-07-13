@@ -239,16 +239,6 @@ header .header-content h1 {
   background-color: rgba(223, 56, 55, 0.8);
   color: white;
 }
-.ficha {
-  margin-top: 25px;
-}
-.ficha .detalle {
-  text-transform: uppercase;
-  font-family: 'Montserrat';
-  font-size: 12px;
-  display: inline-block;
-  border-bottom: 1px solid #2C2F36;
-}
 .redes {
   position: absolute;
   bootom: 0;

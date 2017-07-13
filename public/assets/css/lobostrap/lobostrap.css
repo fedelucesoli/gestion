@@ -12,7 +12,7 @@
   background-color: white;
   border-top: 1px solid #e04538;
   border-bottom: 1px solid #e04538;
-  padding: 50px 15px;
+  padding: 10px 15px;
 }
 .navbar {
   min-height: 0;
@@ -111,6 +111,7 @@
   }
 }
 footer {
+  margin-top: 50px;
   border-top: 1px solid #e04538;
   padding: 15px 0;
 }
@@ -140,6 +141,7 @@ header .header-content {
 }
 header .header-content h1 {
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  color: white;
 }
 @media (min-width: 768px) {
   header .header-content {
@@ -157,6 +159,7 @@ header .header-content h1 {
   }
   header .header-content .header-content-inner h1 {
     font-size: 50px;
+    color: white;
   }
   header .header-content .header-content-inner p {
     font-size: 18px;
@@ -172,106 +175,296 @@ header .header-content h1 {
 .body-font {
   font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 }
-/* Setup */
-html {
-  /* Change default typefaces here */
-  font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 100%;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: auto;
-  -moz-text-size-adjust: auto;
-  -ms-text-size-adjust: auto;
-  -o-text-size-adjust: auto;
-  text-size-adjust: auto;
-}
-/* Copy & Lists */
-p {
-  line-height: 1.45rem;
-  margin-top: 1.45rem;
-  margin-bottom: 0;
-}
-ul,
-ol {
-  margin-top: 1.45rem;
-  margin-bottom: 1.45rem;
-}
-ul li,
-ol li {
-  line-height: 1.45rem;
-}
-ul ul,
-ol ul,
-ul ol,
-ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-blockquote {
-  line-height: 1.45rem;
-  margin-top: 1.45rem;
-  margin-bottom: 1.45rem;
-}
-/* Headings */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  /* Change heading typefaces here */
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-  margin-top: 1.45rem;
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #393c54;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: red;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h1 small,
+.h1 small,
+h2 small,
+.h2 small,
+h3 small,
+.h3 small,
+h1 .small,
+.h1 .small,
+h2 .small,
+.h2 .small,
+h3 .small,
+.h3 .small {
+  font-size: 65%;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 small,
+.h4 small,
+h5 small,
+.h5 small,
+h6 small,
+.h6 small,
+h4 .small,
+.h4 .small,
+h5 .small,
+.h5 .small,
+h6 .small,
+.h6 .small {
+  font-size: 75%;
+}
+.alt {
+  color: #e04538;
+  font-weight: 300;
+}
+h1,
+.h1 {
+  font-size: 40px;
+}
+h2,
+.h2 {
+  font-size: 34px;
+}
+h3,
+.h3 {
+  font-size: 28px;
+}
+h4,
+.h4 {
+  font-size: 20px;
+}
+h5,
+.h5 {
+  font-size: 16px;
+}
+h6,
+.h6 {
+  font-size: 14px;
+}
+p {
+  margin: 0 0 10px;
+  color: #393c54;
+  font-family: "Raleway", "Times New Roman", Times, serif;
+  line-height: 28px;
+}
+.lead {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+a {
+  color: #e04538;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #c62c1f;
+  text-decoration: underline;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+small,
+.small {
+  font-size: 87%;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
   margin-bottom: 0;
-  line-height: 1.45rem;
 }
-h1 {
-  font-size: 3.535rem;
-  line-height: 4.35rem;
-  margin-top: 2.9rem;
+.media {
+  margin-top: 15px;
 }
-h2 {
-  font-size: 2.828rem;
-  line-height: 2.9rem;
-  margin-top: 2.9rem;
+.media:first-child {
+  margin-top: 0;
 }
-h3 {
-  font-size: 1.414rem;
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
 }
-h4 {
-  font-size: 0.707rem;
+.media-body {
+  width: 10000px;
 }
-h5 {
-  font-size: 0.47133333rem;
+.media-object {
+  display: block;
 }
-h6 {
-  font-size: 0.3535rem;
+.media-object.img-thumbnail {
+  max-width: none;
 }
-/* Tables */
-table {
-  margin-top: 1.45rem;
-  border-spacing: 0px;
-  border-collapse: collapse;
+.media-right,
+.media > .pull-right {
+  padding-left: 10px;
 }
-table td,
-table th {
-  padding: 0;
-  line-height: 23.2px;
+.media-left,
+.media > .pull-left {
+  padding-right: 10px;
 }
-/* Code blocks */
-code {
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.media-middle {
+  vertical-align: middle;
+}
+.media-bottom {
   vertical-align: bottom;
 }
-/* Leading paragraph text */
-.lead {
-  font-size: 1.414rem;
-}
-/* Hug a the block above you */
-.hug {
+.media-heading {
   margin-top: 0;
+  margin-bottom: 5px;
+}
+.media-list {
+  padding-left: 0;
+  list-style: none;
 }
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   background-color: rgba(57, 60, 84, 0.1);
+  font-size: 16px;
+  font-family: "Raleway", "Times New Roman", Times, serif;
+}
+.breadcrumb {
+  font-size: 16px;
+  padding: 0px 0px;
+  margin-top: 1.25em;
+  margin-bottom: 2em;
+  list-style: none;
+  font-weight: 500;
+}
+.breadcrumb a {
+  color: rgba(57, 60, 84, 0.6);
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+.breadcrumb li {
+  display: inline-block;
+}
+.breadcrumb li + li:before {
+  padding: 0 5px;
+  color: rgba(57, 60, 84, 0.6);
+  content: "/\00a0";
+  font-weight: 700;
+}
+.breadcrumb li.active a {
+  color: #e04538;
+}
+.ficha .detalle {
+  padding: 25px 0;
+}
+.progreso {
+  position: relative;
+}
+.progreso .descripcion {
+  font-size: 18px;
+  color: rgba(43, 45, 66, 0.9);
+}
+.progreso .fecha {
+  font-weight: 700;
+  color: #393c54;
+}
+.timeline {
+  overflow: hidden;
+  height: 4px;
+  margin: 10px auto;
+  background-color: #c2b8b2;
+}
+.timeline-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  line-height: 25px;
+  color: gray;
+  text-align: center;
+  background-color: #393c54;
 }

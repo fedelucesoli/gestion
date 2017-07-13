@@ -39,6 +39,10 @@ gulp.task('copy', function() {
 
 gulp.task('lobostrap', function() {
     return gulp.src('resources/assets/less/lobostrap/lobostrap.less')
+        // .pipe(less().on('error', function(err){
+        //     // gutil.log(err);
+        //     this.emit('end');
+        // }))
         .pipe(less())
         .pipe(gulp.dest('public/assets/css/lobostrap'))
         .pipe(browserSync.reload({
@@ -108,7 +112,10 @@ gulp.task('connect-sync', function () {
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "localhost:8079/gestion/public"
+        proxy: "localhost:8079/gestion/public",
+        // logLevel: "info",
+        // logSnippet: false
+
     });
 });
 
