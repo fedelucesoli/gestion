@@ -1,5 +1,6 @@
 {{-- @foreach ($item->images as $key) --}}
 
+{{-- TODO background cover  --}}
 
 <div class="owl-carousel owl-theme">
   @foreach ($item->images as $imagen)

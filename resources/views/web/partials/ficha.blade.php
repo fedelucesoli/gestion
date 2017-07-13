@@ -4,7 +4,7 @@
       @component('web.partials.galeria', ['item' => $item ])
 
       @endcomponent
-
+      {{-- TODO BOTONES --}}
       <div class="detalle">
         <h4 class="text-center">Compartí estas obras en tus redes.</h4>
         <div class="row">

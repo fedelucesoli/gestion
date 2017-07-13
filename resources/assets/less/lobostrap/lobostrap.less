@@ -25,7 +25,7 @@ body{
      list-style: none;
      font-weight: 500;
      a{
-       color: fade(@gray-base, 60%);
+       color: fade(@gray-base, 80%);
        text-transform: uppercase;
        .heading-font;
      }
@@ -39,8 +39,12 @@ body{
 
        }
      }
-     li.active a{
-       color: @primario;
+     a:hover{
+       color:@primario;
+     }
+     li .active a{
+       color: fade(@gray-base, 80%);
+
      }
  }
 

@@ -707,7 +707,7 @@ body {
   font-weight: 500;
 }
 .breadcrumb a {
-  color: rgba(57, 60, 84, 0.6);
+  color: rgba(57, 60, 84, 0.8);
   text-transform: uppercase;
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -720,8 +720,11 @@ body {
   content: "/\00a0";
   font-weight: 700;
 }
-.breadcrumb li.active a {
+.breadcrumb a:hover {
   color: #e04538;
+}
+.breadcrumb li .active a {
+  color: rgba(57, 60, 84, 0.8);
 }
 .box-linea {
   background-color: white;
