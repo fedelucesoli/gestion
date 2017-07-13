@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-6">
         @component('web.partials.galeria', ['item' => $item ])
-
+          
         @endcomponent
       </div>
 

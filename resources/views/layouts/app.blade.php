@@ -15,7 +15,7 @@
     {{-- <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"> --}}
     <link href="{{ asset('assets/css/lobostrap/lobostrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/dist/bootstrap-base.css') }}" rel="stylesheet">
-    
+
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('css')
@@ -46,7 +46,7 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script> --}}
     <script src="{{ asset('assets/js/gestion.min.js') }}"></script>
     {{-- {!!$map['js']!!} --}}
 
