@@ -269,7 +269,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 40px;
+  font-size: 56px;
 }
 h2,
 .h2 {
@@ -292,10 +292,11 @@ h6,
   font-size: 14px;
 }
 p {
-  margin: 0 0 10px;
+  margin: 40px 0 80px;
   color: #393c54;
   font-family: "Raleway", "Times New Roman", Times, serif;
-  line-height: 28px;
+  line-height: 31.32px;
+  font-size: 21px;
 }
 .lead {
   margin-bottom: 20px;
@@ -708,8 +709,6 @@ body {
 }
 .breadcrumb a {
   color: rgba(57, 60, 84, 0.8);
-  text-transform: uppercase;
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
 .breadcrumb li {
   display: inline-block;
@@ -732,7 +731,8 @@ body {
   padding: 50px 25px;
 }
 .ficha .detalle {
-  padding: 25px 0;
+  padding: 20px 0;
+  margin: 20px 0;
 }
 #map_canvas {
   border-radius: 3px;

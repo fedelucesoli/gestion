@@ -25,7 +25,7 @@
      items : 1,
      slideSpeed : 2000,
      nav: true,
-     autoplay: true,
+     autoplay: false,
      dots: true,
      loop: true,
      lazyLoad: true,
