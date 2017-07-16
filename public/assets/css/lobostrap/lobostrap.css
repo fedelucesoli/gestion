@@ -9,9 +9,6 @@
 .body-font {
   font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 }
-.border-radius {
-  border-radius: 5px;
-}
 .navbar {
   min-height: 0;
 }
@@ -683,7 +680,6 @@ ol ol {
   height: 400px;
 }
 .item img {
-  border-radius: 3px;
   border-radius: 5px;
 }
 .progreso {
@@ -807,12 +803,18 @@ body {
   box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
   padding: 50px 25px;
 }
+.box-linea-round {
+  background-color: white;
+  box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
+  padding: 30px 25px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 .ficha .detalle {
   padding: 20px 0;
   margin: 20px 0;
 }
 #map_canvas {
-  border-radius: 3px;
   border-radius: 5px;
 }
 .card-obra {
@@ -824,7 +826,6 @@ body {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  border-radius: 3px;
   border-radius: 5px;
 }
 .card-obra a:hover {
