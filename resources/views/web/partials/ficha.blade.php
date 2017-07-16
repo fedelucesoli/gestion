@@ -59,7 +59,7 @@
 
       {{-- TODO BOTONES --}}
       <div class="detalle">
-        <h4 class="text-center">Compartí estas obras en tus redes.</h4>
+        <h4 class="text-center">Compartí esta obra en tus redes.</h4>
         <div class="row text-center">
           <a href="https://twitter.com/minimalmonkey" class="icon-button twitter">
             <i class="icon-twitter"></i>

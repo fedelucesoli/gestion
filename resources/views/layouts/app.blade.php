@@ -40,7 +40,20 @@
       <div class="container">
         <div class="row">
           {{-- todo: iconos de las redes sociales y link a la pagina web --}}
-          <div class="col-md-12 text-right"> 2017 - Municipio de Lobos </div>
+          <div class="col-md-4">
+            <img src="{{asset('assets/img/logo.png')}}" alt="2017 - Municipio de Lobos">
+          </div>
+          <div class="col-md-8 text-right icon-social-container">
+            <a href="https://twitter.com/minimalmonkey" class="icon-min twitter">
+              <i class="icon-twitter"></i>
+            </a>
+            <a href="{{Request::url()}}" data-href="{{Request::url()}}" class="icon-min facebook">
+              <i class="icon-facebook"></i>
+            </a>
+            <a href="https://plus.google.com" class="icon-min google-plus">
+              <i class="icon-google-plus"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
