@@ -2,7 +2,7 @@
   <div class="row">
 
 
-    <div class="col-md-6" id="scroll-div">
+    <div class="col-md-12" id="scroll-div">
 
       {{-- TODO hrefs --}}
       <ol class="breadcrumb" style="display:inline-block">
@@ -10,13 +10,22 @@
         <li class="active"><a href="#">{{ $item->categoria }}</a></li>
       </ol>
       <span class="pull-right"><a href="{{ url()->previous() }}">Volver </a></span>
+      <hr>
 
       <h1>{{$item->titulo}}</h1>
       <p>{{$item->descripcion}}</p>
 
-
-
-
+      <div class="row">
+        <div class="col-md-6">
+          @component('web.partials.galeria', ['item' => $item ])@endcomponent
+        </div>
+        <div class="col-md-6">
+          {!!$map['html']!!}
+        </div>
+      </div>
+      <div class="row">
+        
+      </div>
       <div class="detalle">
         <h3 class="alt" class="alt">Estado de la obra</h3>
 
@@ -78,9 +87,7 @@
     </div>
     {{-- fin div6 --}}
     <div class="col-md-6">
-      @component('web.partials.galeria', ['item' => $item ])
-
-      @endcomponent
+      @component('web.partials.galeria', ['item' => $item ])@endcomponent
       <div class="detalle">
         {{-- <h3 class="alt">Ubicación</h3> --}}
         {!!$map['html']!!}

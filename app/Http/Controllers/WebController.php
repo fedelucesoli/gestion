@@ -29,16 +29,7 @@ class WebController extends Controller
       $data['items'] = Items::all();
       $data['newsletter'] = true;
 
-      $config = array();
-      $config['center'] = '-35.1870349, -59.0949762';
-      $config['map_width'] = '100%';
-      $config['map_height'] = 800;
-      $config['zoom'] = 12;
-      $config['loadAsynchronously '] = true;
 
-      Gmaps::initialize($config);
-
-      $data['map'] = Gmaps::create_map();
       return view('inicio', $data);
 
     }
@@ -89,7 +80,7 @@ class WebController extends Controller
       $config = array();
       $config['center'] = $latlng;
       $config['map_width'] = '100%';
-      $config['map_height'] = 350;
+      $config['map_height'] = 400;
       $config['zoom'] = 15;
       $marker = array();
       $marker['position'] = $latlng;
