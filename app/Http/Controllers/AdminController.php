@@ -7,6 +7,7 @@ use GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade as Gmaps;
 use App\Logic\ImageRepository;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Str as Str;
 
 use App\Items;
 use App\Image;
@@ -52,13 +53,14 @@ class AdminController extends Controller{
 
 
     public function itemsAdd(Request $request){
-
+        // TODO estado y detalles en model nuevo
         $item = new Items;
         $item->titulo = $request->titulo;
         $item->descripcion = $request->descripcion;
         $item->categoria = $request->categoria;
         $item->fecha_inicio = $request->fecha_inicio;
         $item->fecha_fin = $request->fecha_fin;
+        $item->slug= Str::slug($request->fecha_fin);
         $item->lat = $request->lat;
         $item->lng = $request->lng;
         $item->save();

@@ -1,5 +1,5 @@
     <div class="grid-item col-md-4 col-sm-6 col-xs-12">
-      <div class="grid-item-content card-obra  animated fadeInUp">
+      <div class="grid-item-content card-obra">
 
         @foreach ($item->images as $image)
           @if ($loop->first)
@@ -17,7 +17,7 @@
           <div class="detalles">
             <a class="categoria" href='{{ url("categoria/"+ str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
             {{-- <a data-toggle="modal" data-target="#ficha" data-id="{{$item->id}}"> --}}
-            <a href='{{url("item/$item->id")}}'>
+            <a href='{{ route('item', [$item->slug]) }}"'>
               <h4>{{ $item->titulo }}</h4>
             </a>
           </div>

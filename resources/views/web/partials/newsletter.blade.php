@@ -1,7 +1,7 @@
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 <section class="box-linea-round container" style="margin-top: 50px">
-  <div id="mc_embed_signup" class="">
+  <div id="mc_embed_signup" class="col-xs-6 col-xs-offset-3 col-md-offset-0 col-md-12">
   <form action="//gob.us16.list-manage.com/subscribe/post?u=ed7f1819568e62a49bd0b030e&amp;id=3728a59b97" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
     <label for="mce-EMAIL">Suscribite al boletín de noticias del Municipio de Lobos</label>

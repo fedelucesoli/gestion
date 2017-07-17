@@ -65,9 +65,9 @@ class WebController extends Controller
       return view('web.indexmapa', $data);
     }
 
-    public function item($id){
+    public function item($slug){
 
-      $data['item'] = Items::find($id);
+      $data['item'] = Items::where('slug','=', $slug)->firstOrFail();
       $data['itemrelacionados'] = Items::where('categoria', $data['item']->categoria)
                                   ->where('id', '!=', $data['item']->id)
                                   ->limit(3)

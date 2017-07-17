@@ -23,6 +23,7 @@ class CreateItemsTable extends Migration
             $table->date('fecha_fin')->nullable();
             $table->decimal('lng', 11, 7)->nullable();
             $table->decimal('lat', 11, 7)->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
             $table->softDeletes();
 
