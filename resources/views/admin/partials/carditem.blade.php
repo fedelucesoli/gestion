@@ -6,8 +6,6 @@
         <div
           class="back-img"
           style="background-image: url({{asset("uploads/full_size/$image->filename")}});"
-          data-toggle="modal"
-          data-target="#ficha"
           data-id="{{$item->id}}"
           >
         </div>
@@ -16,8 +14,7 @@
 
       <div class="detalles">
         <a class="categoria" href='{{ url("categoria/"+ str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
-        {{-- <a data-toggle="modal" data-target="#ficha" data-id="{{$item->id}}"> --}}
-        <a href='{{url("item/$item->id")}}'>
+        <a href='{{url("item/$item->slug")}}'>
           <h4>{{ $item->titulo }}</h4>
         </a>
       </div>
