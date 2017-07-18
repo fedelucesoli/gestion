@@ -756,6 +756,14 @@ ol ol {
   color: white;
   background-color: #db5a3c;
 }
+.email {
+  color: #393c54;
+  border: 1px solid #393c54;
+}
+.email:hover {
+  color: white;
+  background-color: #393c54;
+}
 /* Icons */
 .icon-button i {
   margin-right: 10px;

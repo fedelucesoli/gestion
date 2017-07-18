@@ -17,7 +17,7 @@
           <div class="detalles">
             <a class="categoria" href='{{ url("categoria/"+ str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
             {{-- <a data-toggle="modal" data-target="#ficha" data-id="{{$item->id}}"> --}}
-            <a href='{{ route('item', [$item->slug]) }}"'>
+            <a href='{{ route('web.item.detalle', [$item->slug]) }}'>
               <h4>{{ $item->titulo }}</h4>
             </a>
           </div>

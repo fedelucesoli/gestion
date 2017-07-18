@@ -60,13 +60,20 @@ class AdminController extends Controller{
         $item->categoria = $request->categoria;
         $item->fecha_inicio = $request->fecha_inicio;
         $item->fecha_fin = $request->fecha_fin;
-        $item->slug= Str::slug($request->fecha_fin);
+        $item->slug= Str::slug($request->titulo);
         $item->lat = $request->lat;
         $item->lng = $request->lng;
-        $item->save();
 
-        $data['id_item'] = $item->id;
-        return redirect()->route('admin.item.image', $data);
+        if ($item->save()) {
+          $data['id_item'] = $item->id;
+          return redirect()->route('admin.item.image', $data);
+        }else{
+
+          return view('admin.itemadd', $data);
+
+        }
+
+
     }
 
     public function uploadImages(Request $request){
