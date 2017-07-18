@@ -9,7 +9,6 @@
 @import "includes/progreso.less";
 @import "includes/botones.less";
 
-
 body{
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -24,7 +23,7 @@ body{
  .breadcrumb {
      font-size: 16px;
      padding: 0px 0px;
-     margin-bottom: 2em;
+    //  margin-bottom: 2em;
      list-style: none;
      font-weight: 500;
      a{
@@ -60,12 +59,18 @@ body{
    box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
    padding: 30px 25px;
    .border-radius;
-  box-sizing: border-box;
+    box-sizing: border-box;
  }
 .ficha{
   .detalle{
     padding: 20px 0;
     margin: 20px 0;
+  }
+  .img{
+    background-position: center;
+    background-size: cover;
+    .border-radius;
+    height: 450px;
   }
 
 }
@@ -108,36 +113,18 @@ body{
   }
   .detalles{
     padding: 15px;
-
-
     h4{
       // font-weight: 400;
       font-size: 24px;
     }
     .categoria{
-      // position: absolute;
-      // top: 0px;
-      // left: -10px;
-      // padding: 10px 24px;
-      // background-color: @bg-light;
-      // border-left: 3px solid @gray-base;
-      // border-radius: 0 5px 5px 0;
-      // box-shadow: 1px 1px 16px 0 black;
       text-transform: uppercase;
       margin-top: 10px;
-      // .sans-serif-font;
       font-weight: 700;
       color: fade(@gray-base, 50%);
     }
     .categoria:hover{
-      // background-color: fade(@primario, 80%);
-      // color: white;
       color: fade(@primario, 80%);
     }
   }
-}
-
-#scroll-div{
-  // overflow-y: auto;
-  // height: 520px;
 }

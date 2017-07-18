@@ -4,8 +4,9 @@
 
 <div class="owl-carousel owl-theme">
   @foreach ($item->images as $imagen)
-    <div class="item">
-      <img class="owl-lazy" data-src="{{asset("uploads/full_size/$imagen->filename")}}"  alt="{{$item->titulo}}" height="400px">
+    <div class="item" >
+      <div class="img" style="background-image: url('{{asset("uploads/full_size/$imagen->filename")}}')"></div>
+      {{-- <img class="owl-lazy" data-src="{{asset("uploads/full_size/$imagen->filename")}}"  alt="{{$item->titulo}}" height="400px"> --}}
     </div>
   @endforeach
 </div>

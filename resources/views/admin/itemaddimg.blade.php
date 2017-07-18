@@ -45,7 +45,7 @@ Dropzone.options.realDropzone = {
 
       <div class="row">
           <div class="col-md-8 col-md-offset-2 box-linea">
-              <h2 class="text-center">Dashboard</h2>
+              <h2 class="text-center">Subir Imágenes</h2>
               <form class="dropzone dz-clickable" action="{{route('admin.image.upload')}}" method="post" id="my-awesome-dropzone"  enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="hidden" name="id_item" value="{{ $id_item }}">

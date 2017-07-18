@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Raleway:300,400,700');
-@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 .box-shadow {
   box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
 }
@@ -723,11 +723,15 @@ ol ol {
   color: #fff;
 }
 .icon-min {
-  padding: 15px 15px;
+  width: 35px;
+  height: 35px;
   border-radius: 5px;
   border: none !important;
-  margin: 0px 10px;
+  margin: 0px 5px;
   font-size: 21px;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
 }
 .icon-min i {
   margin: 0;
@@ -755,6 +759,14 @@ ol ol {
 .google-plus:hover {
   color: white;
   background-color: #db5a3c;
+}
+.youtube {
+  color: #cc181e;
+  border: 1px solid #cc181e;
+}
+.youtube:hover {
+  color: white;
+  background-color: #cc181e;
 }
 .email {
   color: #393c54;
@@ -784,7 +796,6 @@ body {
 .breadcrumb {
   font-size: 16px;
   padding: 0px 0px;
-  margin-bottom: 2em;
   list-style: none;
   font-weight: 500;
 }
@@ -821,6 +832,12 @@ body {
 .ficha .detalle {
   padding: 20px 0;
   margin: 20px 0;
+}
+.ficha .img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  height: 450px;
 }
 #map_canvas {
   border-radius: 5px;

@@ -45,13 +45,13 @@
           </div>
           <div class="col-md-8 col-xs-6 text-right icon-social-container">
             <a href="https://twitter.com/minimalmonkey" class="icon-min twitter">
-              <i class="icon-twitter"></i>
+              <i class="fa fa-twitter"></i>
             </a>
             <a href="{{Request::url()}}" data-href="{{Request::url()}}" class="icon-min facebook">
-              <i class="icon-facebook"></i>
+              <i class="fa fa-facebook"></i>
             </a>
-            <a href="https://plus.google.com" class="icon-min google-plus">
-              <i class="icon-google-plus"></i>
+            <a href="#" class="icon-min youtube">
+              <i class="fa fa-youtube-play"></i>
             </a>
           </div>
         </div>
