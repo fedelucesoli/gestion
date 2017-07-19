@@ -44,13 +44,13 @@
             <img src="{{asset('assets/img/logo.png')}}" alt="2017 - Municipio de Lobos">
           </div>
           <div class="col-md-8 col-xs-6 text-right icon-social-container">
-            <a href="https://twitter.com/minimalmonkey" class="icon-min twitter">
+            <a href="https://twitter.com/municipiolobos" target="_blank" class="icon-min twitter">
               <i class="fa fa-twitter"></i>
             </a>
-            <a href="{{Request::url()}}" data-href="{{Request::url()}}" class="icon-min facebook">
+            <a href="https://www.facebook.com/municipiolobos/" target="_blank" class="icon-min facebook">
               <i class="fa fa-facebook"></i>
             </a>
-            <a href="#" class="icon-min youtube">
+            <a href="https://www.youtube.com/channel/UCgRZ4vy7UbgPe0RD8japUcw" target="_blank" class="icon-min youtube">
               <i class="fa fa-youtube-play"></i>
             </a>
           </div>
