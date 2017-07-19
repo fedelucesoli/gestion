@@ -49,7 +49,6 @@ class WebController extends Controller
 
       foreach ($data['items'] as $item) {
         $latlng= $item->lat . ', '. $item->lng;
-
         $marker = array();
         $marker['position'] = $latlng;
         $marker['infowindow_content'] = $item->titulo;
@@ -81,10 +80,12 @@ class WebController extends Controller
       $config['center'] = $latlng;
       $config['map_width'] = '100%';
       $config['map_height'] = 400;
-      $config['zoom'] = 15;
+      $config['zoom'] = 14;
+      $config['disableMapTypeControl'] = true;
+      $config['disableDefaultUI'] = true;
       $marker = array();
       $marker['position'] = $latlng;
-      // $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|9999FF|000000';
+      $marker['icon'] = '/assets/img/marker.png';
       Gmaps::add_marker($marker);
       Gmaps::initialize($config);
 
