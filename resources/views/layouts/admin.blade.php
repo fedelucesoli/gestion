@@ -56,20 +56,20 @@
        </li>
    @endif --}}
 
-        <div class="container-fluid">
-          <div class="row">
+        <div class="container">
+          {{-- <div class="row">
             <div class="col-sm-3 col-md-2">
               <ul class="nav nav-sidebar">
                 <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="#">Escritorio <span class="sr-only">(current)</span></a></li>
                 <li class="{{ Request::is('items/add') ? 'active' : '' }}"><a href="{{route('admin.item.add')}}">Agregar</a></li>
                 <li class="{{ (Request::is('items/list') ? 'active' : '') }}"><a href="{{route('admin.item.list')}}">Listado</a></li>
               </ul>
-            </div>
+            </div> --}}
 
-            <div class="col-sm-9 col-md-10 main">
+            {{-- <div class="col-sm-9 col-md-10 main"> --}}
               @yield('content')
-            </div>
-          </div>
+            {{-- </div>
+          </div> --}}
         </div>
 
         <footer>

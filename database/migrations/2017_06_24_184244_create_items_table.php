@@ -24,11 +24,13 @@ class CreateItemsTable extends Migration
             $table->decimal('lng', 11, 7)->nullable();
             $table->decimal('lat', 11, 7)->nullable();
             $table->string('slug')->unique();
+            $table->boolean('activo')->default(0);            
             $table->timestamps();
             $table->softDeletes();
 
         });
     }
+
 
     /**
      * Reverse the migrations.

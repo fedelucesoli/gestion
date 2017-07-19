@@ -39,7 +39,6 @@
     <footer>
       <div class="container">
         <div class="row">
-          {{-- todo: iconos de las redes sociales y link a la pagina web --}}
           <div class="col-md-4 col-xs-6">
             <img src="{{asset('assets/img/logo.png')}}" alt="2017 - Municipio de Lobos">
           </div>
