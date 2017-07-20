@@ -18,7 +18,6 @@
           <h4>{{ $item->titulo }}</h4>
         </a>
       </div>
-      <a href="#">Editar</a>
-      <a href="#">Borrar</a>
+
   </div>
 </div>
