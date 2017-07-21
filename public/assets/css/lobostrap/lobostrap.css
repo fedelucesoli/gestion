@@ -927,3 +927,46 @@ body {
 .card-obra .detalles .categoria:hover {
   color: rgba(224, 69, 56, 0.8);
 }
+table {
+  background-color: white;
+}
+caption {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #393c54;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 15px;
+  line-height: 1.4em;
+  vertical-align: top;
+  border-top: 1px solid #ffffff;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #b1b4ca;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #393c54;
+}
