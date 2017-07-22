@@ -3,6 +3,8 @@
 
         @foreach ($item->images as $image)
           @if ($loop->first)
+            <a href='{{ route('web.item.detalle', [$item->slug]) }}'>
+
             <div
               class="back-img"
               style="background-image: url({{asset("uploads/full_size/$image->filename")}});"
@@ -11,6 +13,7 @@
               data-id="{{$item->id}}"
               >
             </div>
+          </a>
           @endif
         @endforeach
 

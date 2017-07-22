@@ -4,7 +4,7 @@
 
   <div class="container">
       <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
-        @each('web.partials.carditem', $items, 'item')
+        @each('web.partials.tarjeta', $items, 'item')
       </div>
   </div>
 
