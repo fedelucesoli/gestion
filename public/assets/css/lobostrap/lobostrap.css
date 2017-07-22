@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Raleway:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Raleway:300,400,600');
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 .box-shadow {
   box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
@@ -823,6 +823,56 @@ fieldset[disabled] a.btn {
 .icon-button:hover .icon-google-plus {
   color: inherit;
 }
+.nav {
+  margin: 0 15px;
+  padding-left: 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(57, 60, 84, 0.7);
+  padding-bottom: 10px;
+}
+.nav > li {
+  position: relative;
+  display: inline-block;
+}
+.nav > li > a {
+  padding: 15px 15px 10px 0;
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(57, 60, 84, 0.7);
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  color: #e04538;
+}
+.nav > li.right {
+  float: right;
+  margin: 0;
+  padding-right: 0;
+}
+.nav > li.right a {
+  padding: 0;
+}
+.nav > li.disabled > a {
+  color: gray;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+  color: red;
+  text-decoration: none;
+  background-color: transparent;
+}
+.nav .activo > a {
+  color: #e04538;
+  border-bottom: 1px solid #e04538;
+}
+.nav .activo > a,
+.nav .activo > a:hover,
+.nav .activo > a:focus {
+  color: #e04538;
+  border-bottom: 1px solid #e04538;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -950,14 +1000,31 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 15px;
+  padding: 25px;
   line-height: 1.4em;
-  vertical-align: top;
-  border-top: 1px solid #ffffff;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(57, 60, 84, 0.3);
+}
+.table > thead > tr > th.info,
+.table > tbody > tr > th.info,
+.table > tfoot > tr > th.info,
+.table > thead > tr > td.info,
+.table > tbody > tr > td.info,
+.table > tfoot > tr > td.info {
+  color: #b1b4ca;
+}
+.table > thead > tr > th a,
+.table > tbody > tr > th a,
+.table > tfoot > tr > th a,
+.table > thead > tr > td a,
+.table > tbody > tr > td a,
+.table > tfoot > tr > td a {
+  color: #393c54;
 }
 .table > thead > tr > th {
+  font-size: 16px;
   vertical-align: bottom;
-  border-bottom: 2px solid #b1b4ca;
+  border-bottom: 2px solid #393c54;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,

@@ -1,0 +1,60 @@
+
+.nav {
+  margin: 0 15px;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  border-bottom: 1px solid fade(@gray-base, 70%);
+  padding-bottom: 10px;
+  > li {
+    position: relative;
+    display: inline-block;
+
+    > a {
+      // position: relative;
+      // display: block;
+      padding: 15px 15px 10px 0;
+      margin-right: 15px;
+      font-size: 18px;
+      font-weight: 600;
+      color: fade(@gray-base, 70%);
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: @primario;
+      }
+    }
+    &.right{
+      float: right;
+      margin: 0;
+      padding-right: 0;
+      & a{
+        padding: 0;
+      }
+    }
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+      color: gray;
+
+      &:hover,
+      &:focus {
+        color: red;
+        text-decoration: none;
+        background-color: transparent;
+        // cursor: @cursor-disabled;
+      }
+    }
+  }
+
+  // Open dropdowns
+  .activo > a {
+    color: @primario;
+    border-bottom: 1px solid @primario;
+    &,
+    &:hover,
+    &:focus {
+      color: @primario;
+      border-bottom: 1px solid @primario;
+    }
+  }
+
+}

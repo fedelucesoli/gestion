@@ -24,12 +24,14 @@ class AdminController extends Controller{
     public function index(){
         $data['items'] = Items::all();
 
-        return view('admin.dashboard', $data);
+        // return view('admin.dashboard', $data);
+        return view('admin.listado-obras', $data);
+
     }
 
-    public function itemsList(){
+    public function listadoobras(){
       $data['items'] = Items::all();
-      return view('admin.itemslist', $data);
+      return view('admin.listado-obras', $data);
     }
 
     public function itemsCreate(){
