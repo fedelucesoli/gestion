@@ -51,7 +51,7 @@
          <div class="col-md-12">
 
              <ul class="nav">
-               <li class="{{ Request::is('admin') ? 'activo' : '' }}" ><a href="" >Obras</a></li>
+               <li class="{{ Request::is('admin') ? 'activo' : '' }}" ><a href="{{route('admin.dashboard')}}" >Obras</a></li>
                <li class="{{ Request::is('admin/obras/categorias') ? 'activo' : '' }}"><a href="">Categorias</a></li>
                <li class="right"><a href="">{{ Auth::user()->name }} <span class="caret"></span></a></li>
              </ul>

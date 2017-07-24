@@ -38,11 +38,14 @@ Route::get('/categoria/{id}', 'WebController@categoria')->name('web.categoria.li
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
-Route::get('/items/list', 'AdminController@itemsList')->name('admin.item.list');
-Route::get('/items/add', 'AdminController@itemsCreate')->name('admin.item.create');
-Route::post('/items/add', 'AdminController@itemsAdd')->name('admin.item.add');
+Route::get('admin/items/list', 'AdminController@itemsList')->name('admin.item.list');
 
-Route::get('/items/add/images', 'AdminController@uploadImages')->name('admin.item.image');
+Route::get('admin/items/add', 'AdminController@itemsCreate')->name('admin.item.add');
+Route::post('admin/items/add', 'AdminController@itemsAdd')->name('admin.item.create');
 
-Route::post('/items/add/images', 'AdminController@postUpload')->name('admin.image.upload');
+Route::get('admin/items/editar/{id}', 'AdminController@itemsEditar')->name('admin.item.editar');
+Route::post('admin/items/editar/{id}', 'AdminController@itemsEditar')->name('admin.item.editpost');
+
+Route::get('admin/items/add/images', 'AdminController@uploadImages')->name('admin.item.image');
+Route::post('admin/items/add/images', 'AdminController@postUpload')->name('admin.image.upload');
 Route::post('upload/delete', 'AdminController@deleteUpload')->name('admin.image.remove');
