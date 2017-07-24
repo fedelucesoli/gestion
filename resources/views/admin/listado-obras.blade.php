@@ -5,7 +5,7 @@
 
       <div class="col-md-12" style="margin: 75px 0 25px 0;">
         <h1>Listado de Obras</h1>
-        <a href="{{route('admin.item.add')}}" class="btn"> Agregar Obra</a>
+        <a href="{{route('admin.obras.create')}}" class="btn"> Agregar Obra</a>
       </div>
       <div class="col-md-12">
       <table class="table">
@@ -31,7 +31,7 @@
                 @else
                   <i class="fa fa-eye-slash" style="color:red"></i>
                 @endif</th>
-              <th><a href="{{route('admin.item.editar', ['id' => $item->id])}}">Editar</a> - <a href="#">Eliminar</a></th>
+              <th><a href="{{route('admin.obras.edit', ['id' => $item->id])}}">Editar</a> - <a href="#">Eliminar</a></th>
             </tr>
           @endforeach
 

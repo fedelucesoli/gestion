@@ -10,7 +10,7 @@
 
   <div class="row">
     @php
-      $data['action'] = route("admin.item.add");
+      $data['action'] = route("admin.obras.store");
     @endphp
 
     @include('admin.partials.form', $data)
