@@ -16,13 +16,13 @@
         </thead>
         <tbody>
           @foreach ($categorias as $categoria)
-            <tr>
+            <tr class="tr">
               <th scope="row">{{$categoria->id}}</th>
               <th class="">{{$categoria->nombre}}</th>
 
               <th>
                 <a href="{{route('admin.categoria.edit', ['id' => $categoria->id])}}">Editar</a> -
-                <a href="#" onclick="d(this, {{$categoria->id}})">Eliminar</a>
+                <a href="#" class="d-btn" data-id="{{$categoria->id}}">Eliminar</a>
               </th>
             </tr>
           @endforeach
@@ -55,24 +55,28 @@
 
 @push('scripts')
 <script type="text/javascript">
-function d(obj, id) {
+
+
+
+$('.d-btn').click(function(event){
   event.preventDefault();
-  var x = obj.parentNode.parentNode;
+  var this1 = $(this);
+  var id = $(this).data('id');
+  console.log(id);
 
-if (confirm('Eliminar?')) {
-    $.ajax({
-      headers: {
-         'X-CSRF-TOKEN':"{{ csrf_token() }}"
-     },
-      type: "DELETE",
-      url: 'categoria/' + id,
+      $.ajax({
+        headers: {
+           'X-CSRF-TOKEN':"{{ csrf_token() }}"
+       },
+        type: "DELETE",
+        url: 'categoria/' + id,
 
-      success: function(result) {
-        x.remove();
-      }
-    });
-  }
-}
+        success: function(result) {
+          this1.parent().parent().hide();
+        }
+      });
+
+});
 
 </script>
 

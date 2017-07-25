@@ -93,7 +93,7 @@ class CategoriaController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $categoria1 = Categoria::find($id)->firstOrFail();
+        $categoria1 = Categoria::find($id);
         // $categoria1 = Categoria::find()->first();
         if ($categoria1) {
           $categoria1->delete();

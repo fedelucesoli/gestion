@@ -128,6 +128,7 @@ gulp.task('dev', ['connect-sync', 'less', 'lobostrap', 'scripts', 'minify-css', 
     gulp.watch('public/assets/css/*.css', ['minify-css']);
     gulp.watch('resources/assets/js/*.js', ['scripts']);
     // Reloads the browser whenever HTML or JS files change
+    gulp.watch('resources/views/*/*/*.php', browserSync.reload);
     gulp.watch('resources/views/*/*.php', browserSync.reload);
     gulp.watch('resources/views/*.php', browserSync.reload);
 });
