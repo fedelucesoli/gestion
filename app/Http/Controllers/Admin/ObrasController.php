@@ -17,9 +17,7 @@ class ObrasController extends Controller{
 
     public function index(){
       $data['items'] = Items::all();
-      // $request->session()->put('mensaje', 'fede');
-      session(['mensaje' => 'value']);
-      return view('admin.listado-obras', $data);
+      return view('admin.obras.index', $data);
       // TODO sacar datos para mostrar
 
     }
@@ -39,7 +37,7 @@ class ObrasController extends Controller{
 
       Gmaps::initialize($config);
       $data['map'] = Gmaps::create_map();
-      return view('admin.itemadd', $data);
+      return view('admin.obras.create', $data);
 
     }
 
@@ -75,16 +73,16 @@ class ObrasController extends Controller{
      * @param  \App\Items  $items
      * @return \Illuminate\Http\Response
      */
-    public function show(Items $items){
+    public function show($id){
 
-      $data['item'] = Items::where('slug','=', $slug)->firstOrFail();
+      $data['item'] = Items::where('id','=', $id)->firstOrFail();
       $data['itemrelacionados'] = Items::where('categoria', $data['item']->categoria)
                                   ->where('id', '!=', $data['item']->id)
                                   ->limit(3)
                                   ->get();
 
       if(is_null($data['item'])){
-        return redirect()->route('inicio');
+        return redirect()->route('admin.obras.index');
       }
       $latlng= $data['item']->lat . ', '. $data['item']->lng;
       $config = array();
@@ -102,7 +100,7 @@ class ObrasController extends Controller{
 
       $data['map'] = Gmaps::create_map();
 
-      return view('web.itemficha', $data);
+      return view('admin.obras.show', $data);
     }
 
     /**
@@ -119,7 +117,7 @@ class ObrasController extends Controller{
                                     // ->limit(3)
                                     ->get();
         if(is_null($data['item'])){
-          return redirect()->route('inicio');
+          return redirect()->route('admin');
         }
         $latlng= $data['item']->lat . ', '. $data['item']->lng;
         $config = array();
@@ -143,7 +141,7 @@ class ObrasController extends Controller{
         Gmaps::initialize($config);
 
         $data['map'] = Gmaps::create_map();
-        return view('admin.itemEditar', $data);
+        return view('admin.obras.edit', $data);
 
       }
     }

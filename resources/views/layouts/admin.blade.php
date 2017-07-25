@@ -53,14 +53,15 @@
              <ul class="nav">
                <li class="{{ Request::is('admin') ? 'activo' : '' }}" ><a href="{{route('admin.dashboard')}}" >Escritorio</a></li>
                <li class="{{ Request::is('admin/obras/*') || Request::is('admin/obras')  ? 'activo' : '' }}" ><a href="{{route('admin.obras.index')}}" >Obras</a></li>
-               <li class="{{ Request::is('admin/categorias') || Request::is('admin/categorias/*') ? 'activo' : '' }}"><a href="">Categorias</a></li>
+               <li class="{{ Request::is('admin/categorias') || Request::is('admin/categorias/*') ? 'activo' : '' }}"><a href="{{route('admin.categoria.index')}}">Categorias</a></li>
+
                <li class="right"><a href="">{{ Auth::user()->name }} <span class="caret"></span></a></li>
              </ul>
 
          </div>
        </div>
-       @if (Session::has('mensaje'))
-            <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
+       @if (Session::has('status'))
+            <div class="alert alert-info">{{ Session::get('status') }}</div>
         @endif
        @yield('content')
 
