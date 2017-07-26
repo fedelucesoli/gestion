@@ -91,7 +91,7 @@ class WebController extends Controller
 
       $data['map'] = Gmaps::create_map();
 
-      return view('web.itemficha', $data);
+      return view('web.ficha', $data);
     }
     public function itemAjax($id){
 
