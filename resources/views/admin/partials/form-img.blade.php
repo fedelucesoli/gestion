@@ -5,7 +5,7 @@
 
        {{-- <input name="file" id="images" type="file" multiple /> --}}
        <div id="filediv">
-         <input name="file[]" type="file" id="file" multiple/>
+         <input name="imagenes[]" type="file" id="file" multiple/>
        </div>
        <br/>
        {{-- <input type="button" class="add_more" id="add_more" value="Agregas más fotos"/> --}}

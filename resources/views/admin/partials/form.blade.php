@@ -3,7 +3,7 @@
    <div class="form-group @if ($errors->has('titulo')) has-error @endif">
     <label class="control-label col-sm-3 requiredField" for="titulo">Titulo<span class="asteriskField">*</span></label>
     <div class="col-sm-8">
-     <input class="form-control" id="titulo" name="titulo" type="text" value="{{@$item->titulo}}"/>
+     <input class="form-control" id="titulo" name="titulo" type="text" value="{{ old('titulo') }}"/>
      @if ($errors->has('titulo'))<p class="help-block">{{ $errors->first('titulo') }}</p>@endif
     </div>
    </div>
@@ -26,7 +26,7 @@
     <label class="control-label col-sm-3 requiredField" for="descripcion">Descripci&oacute;n <span class="asteriskField">*</span>
     </label>
     <div class="col-sm-8">
-     <textarea class="form-control" cols="40" id="descripcion" name="descripcion" rows="10">{{@$item->descripcion}}</textarea>
+     <textarea class="form-control" cols="40" id="descripcion" name="descripcion" rows="10">{{ old('titulo') }}</textarea>
      @if ($errors->has('descripcion'))<p class="help-block">{{ $errors->first('descripcion') }}</p>@endif
 
     </div>

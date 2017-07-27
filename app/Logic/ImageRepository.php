@@ -10,23 +10,74 @@ use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use App\Image;
 
-
 class ImageRepository
 {
-    public function upload( $form_data )
+    public function uploadMultiple( $form_data )
     {
 
-        $validator = Validator::make($form_data, Image::$rules, Image::$messages);
+        // $validator = Validator::make($form_data, Image::$rules, Image::$messages);
+        //
+        // if ($validator->fails()) {
+        //
+        //     return Response::json([
+        //         'error' => true,
+        //         'message' => $validator->messages()->first(),
+        //         'code' => 400
+        //     ], 400);
+        //
+        // }
 
-        if ($validator->fails()) {
+        $photo = $form_data['file'];
+
+        $originalName = $photo->getClientOriginalName();
+        $extension = $photo->getClientOriginalExtension();
+        $originalNameWithoutExt = substr($originalName, 0, strlen($originalName) - strlen($extension) - 1);
+
+        $filename = $this->sanitize($originalNameWithoutExt);
+        $allowed_filename = $this->createUniqueFilename( $filename, $extension );
+
+        $uploadSuccess1 = $this->original( $photo, $allowed_filename );
+
+        $uploadSuccess2 = $this->icon( $photo, $allowed_filename );
+
+        if( !$uploadSuccess1 || !$uploadSuccess2 ) {
 
             return Response::json([
                 'error' => true,
-                'message' => $validator->messages()->first(),
-                'code' => 400
-            ], 400);
+                'message' => 'Server error while uploading',
+                'code' => 500
+            ], 500);
 
         }
+
+        $sessionImage = new Image;
+        $sessionImage->filename      = $allowed_filename;
+        $sessionImage->original_name = $originalName;
+        $sessionImage->item_id = $form_data['id_item'];
+
+        $sessionImage->save();
+
+        return Response::json([
+            'error' => false,
+            'code'  => 200,
+            'filename' => $allowed_filename
+        ], 200);
+
+    }
+    public function upload( $form_data )
+    {
+
+        // $validator = Validator::make($form_data, Image::$rules, Image::$messages);
+        //
+        // if ($validator->fails()) {
+        //
+        //     return Response::json([
+        //         'error' => true,
+        //         'message' => $validator->messages()->first(),
+        //         'code' => 400
+        //     ], 400);
+        //
+        // }
 
         $photo = $form_data['file'];
 

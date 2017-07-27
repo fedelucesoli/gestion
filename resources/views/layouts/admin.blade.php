@@ -60,8 +60,8 @@
 
          </div>
        </div>
-       @if (Session::has('status'))
-            <div class="alert alert-info">{{ Session::get('status') }}</div>
+       @if (Session::has('mensaje'))
+            <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
         @endif
        @yield('content')
 

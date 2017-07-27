@@ -7,17 +7,21 @@ use App\Image;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade as Gmaps;
+// use Intervention\Image\Facades\Image as ;
 use App\Logic\ImageRepository;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str as Str;
 
 use Illuminate\Contracts\Validation\Validator;
-// use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ObrasController extends Controller{
-
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
     public function index(){
       $data['items'] = Items::all();
       return view('admin.obras.index', $data);
@@ -52,23 +56,16 @@ class ObrasController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request, ImageRepository $imageRepository){
 
       $rules = array(
         'titulo'            => 'required',
         'descripcion'       => 'required',
         'categoria'         => 'required',
+      );
 
-    );
-    $validator = $this->validate($request, $rules);
+      $validator = $this->validate($request, $rules);
 
-    // if ($validator->fails()) {
-    //
-    //     $messages = $validator->messages();
-    //     return view('admin.obras.create', $data)->withErrors($validator)->withInput();
-    //
-    // } else {
-      // TODO estado y detalles en model nuevo
       $item = new Items;
       $item->titulo = $request->titulo;
       $item->descripcion = $request->descripcion;
@@ -80,22 +77,22 @@ class ObrasController extends Controller{
       $item->lng = $request->lng;
 
       if ($item->save()) {
-        $data['id_item'] = $item->id;
-        // return redirect()->route('admin.item.image', $data);
-        return redirect()->route('admin.obras.index', $data);
+
+        foreach ($request->imagenes as $photo) {
+            $request['file'] = $photo;
+            $request['id_item'] = $item->id;
+            $response = $imageRepository->upload($request);
+        }
+        $request->session()->flash('mensaje', 'COrrecto todo');
+        return redirect()->route('admin.obras.index');
+
       }else{
         return view('admin.itemadd', $data);
       }
-    // }
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Items  $items
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id){
 
       $data['item'] = Items::where('id','=', $id)->firstOrFail();
@@ -126,12 +123,7 @@ class ObrasController extends Controller{
       return view('admin.obras.show', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Items  $items
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Items $items){
       if (isset($id)) {
         $data['item'] = Items::where('id','=', $id)->firstOrFail();
@@ -169,14 +161,13 @@ class ObrasController extends Controller{
       }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Items  $items
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Items $items)
+    {
+        //
+    }
+
+    public function active(Request $request, Items $items)
     {
         //
     }

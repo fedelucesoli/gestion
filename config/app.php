@@ -179,6 +179,8 @@ return [
 
         // Agregado por fede
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
 
 
 
@@ -233,6 +235,8 @@ return [
 
         // Agregado por fede
         'Gmaps' => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class
+
     ],
 
 ];
