@@ -15,7 +15,7 @@
             <th>Titulo</th>
             <th>Categoria</th>
             <th>Estado</th>
-            <th>Acciones</th>
+            <th class="text-center">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -24,14 +24,21 @@
               <th scope="row">{{$item->id}}</th>
               <th><a href="{{route('admin.obras.show', ['id' => $item->id])}}">{{$item->titulo}}</a></th>
               <th class="info">{{$item->categoria}}</th>
-              <th class="info">
+              <th class="">
 
                 @if ($item->activo)
-                  <i class="fa fa-eye" style="color:green"></i>
+                  Publicado
                 @else
-                  <i class="fa fa-eye-slash" style="color:red"></i>
+                  Borrador
                 @endif</th>
-              <th><a href="{{route('admin.obras.edit', ['id' => $item->id])}}">Editar</a> - <a href="#">Eliminar</a></th>
+                <td class="text-center">
+                  <a href="#" class="btn btn-success btn-xs"><span class="fa fa-check"></span></a> &nbsp;
+                  <a href="#" class="btn btn-warning btn-xs"><span class="fa fa-pencil"></span></a> &nbsp;
+                  <a href="#" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span></a>
+                </td>
+              {{-- <th class="text-right">
+                <a href="{{route('admin.obras.edit', ['id' => $item->id])}}">Editar</a> -
+                <a href="#">Eliminar</a></th> --}}
             </tr>
           @endforeach
 

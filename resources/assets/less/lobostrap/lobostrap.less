@@ -135,8 +135,8 @@ table {
   background-color: white;
 }
 caption {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
   color: @gray-base;
   text-align: left;
 }
@@ -158,16 +158,16 @@ th {
     > tr {
       > th,
       > td {
-        padding: 25px;
+        padding: 20px 10px;
         line-height: 1.4em;
         vertical-align: middle;
         border-bottom: 1px solid fade(@gray-base, 30%);
         &.info{
           color: @gray-light;
         }
+      
         a{
           color: @gray-base;
-
         }
       }
     }
@@ -177,6 +177,7 @@ th {
     font-size: 16px;
     vertical-align: bottom;
     border-bottom: 2px solid @gray-base;
+    padding: 5px 10px;
   }
   // Remove top border from thead by default
   > caption + thead,
