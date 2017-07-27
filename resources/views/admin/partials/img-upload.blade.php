@@ -14,7 +14,7 @@ $('#uploadimages').on('show.bs.modal', function (event) {
                            '{{ csrf_field() }}'+
                            "</form>");
       myAwesomeDropzone = {
-        url: "{{route('admin.image.post')}}",
+        url: "",
         addRemoveLinks: true,
         paramName: "file",
         maxFilesize: 4, // MB

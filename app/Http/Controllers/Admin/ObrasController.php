@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str as Str;
 
+use Illuminate\Contracts\Validation\Validator;
+// use Illuminate\Foundation\Validation\ValidatesRequests;
+
 class ObrasController extends Controller{
 
     public function index(){
@@ -23,6 +26,7 @@ class ObrasController extends Controller{
     }
 
     public function create(){
+      $data['action'] = route("admin.obras.store");
 
       $config = array();
       $config['center'] = '-35.1870349, -59.0949762';
@@ -37,6 +41,7 @@ class ObrasController extends Controller{
 
       Gmaps::initialize($config);
       $data['map'] = Gmaps::create_map();
+
       return view('admin.obras.create', $data);
 
     }
@@ -48,6 +53,21 @@ class ObrasController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
+
+      $rules = array(
+        'titulo'            => 'required',
+        'descripcion'       => 'required',
+        'categoria'         => 'required',
+
+    );
+    $validator = $this->validate($request, $rules);
+
+    // if ($validator->fails()) {
+    //
+    //     $messages = $validator->messages();
+    //     return view('admin.obras.create', $data)->withErrors($validator)->withInput();
+    //
+    // } else {
       // TODO estado y detalles en model nuevo
       $item = new Items;
       $item->titulo = $request->titulo;
@@ -61,10 +81,13 @@ class ObrasController extends Controller{
 
       if ($item->save()) {
         $data['id_item'] = $item->id;
-        return redirect()->route('admin.item.image', $data);
+        // return redirect()->route('admin.item.image', $data);
+        return redirect()->route('admin.obras.index', $data);
       }else{
         return view('admin.itemadd', $data);
       }
+    // }
+
     }
 
     /**
