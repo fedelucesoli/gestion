@@ -52,6 +52,9 @@
             <a href="https://www.youtube.com/channel/UCgRZ4vy7UbgPe0RD8japUcw" target="_blank" class="icon-min youtube">
               <i class="fa fa-youtube-play"></i>
             </a>
+            <a href="https://www.flickr.com/photos/municipiodelobos" target="_blank" class="icon-min flickr">
+              <i class="fa fa-flickr" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
