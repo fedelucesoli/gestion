@@ -43,6 +43,7 @@ Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
 Route::resource('/admin/obras', 'Admin\ObrasController', ['as' => 'admin']);
 Route::resource('/admin/categoria', 'Admin\CategoriaController', ['as' => 'admin']);
+Route::post('/admin/obras/estado', 'Admin\ObrasController@estado');
 
 
 

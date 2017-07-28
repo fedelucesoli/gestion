@@ -167,9 +167,25 @@ class ObrasController extends Controller{
         //
     }
 
-    public function active(Request $request, Items $items)
+    public function estado(Request $request, Items $items)
     {
-        //
+      $item = Items::find($request->input('id'));
+      if ($item) {
+        if ($item->activo) {
+          $estado = 0;
+        }else{
+          $estado = 1;
+        }
+        $item->activo = $estado;
+        $item->save();
+        $request->session()->flash('status', 'Categoria Eliminada');
+        $data['status'] = "mal";
+        $data['estado'] = $estado;
+
+      }
+      $data['status'] = "bien";
+      return json_encode($data);
+      // return redirect('dashboard')->with('mensaje', 'Obra publicada!');
     }
 
     /**
@@ -178,8 +194,14 @@ class ObrasController extends Controller{
      * @param  \App\Items  $items
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Items $items)
+    public function destroy(Request $request)
     {
-        //
+      $obra = Items::find($request->input('id'));
+      if ($obra) {
+        $obra->delete();
+        $request->session()->flash('status', 'Categoria Eliminada');
+      }
+      $data['status'] = "Eliminado";
+      return json_encode($data);
     }
 }

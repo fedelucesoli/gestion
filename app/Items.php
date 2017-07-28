@@ -20,5 +20,9 @@ class Items extends Model
     {
         return $this->hasMany('App\Image', 'item_id');
     }
+    public function scopeActivo($query)
+   {
+       return $query->where('activo', 1);
+   }
 
 }

@@ -10,13 +10,8 @@ use App\Image;
 
 class WebController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
+    public function __construct(){
+
     }
 
     /**
@@ -26,7 +21,7 @@ class WebController extends Controller
      */
     public function index()
     {
-      $data['items'] = Items::all();
+      $data['items'] = Items::activo()->get();
       $data['newsletter'] = true;
 
 
