@@ -61,7 +61,7 @@ class WebController extends Controller
 
     public function item($slug){
 
-      $data['item'] = Items::where('slug','=', $slug)->firstOrFail();
+      $data['item'] = Items::where('slug','=', $slug)->first();
       $data['itemrelacionados'] = Items::where('categoria', $data['item']->categoria)
                                   ->where('id', '!=', $data['item']->id)
                                   ->limit(3)
@@ -88,6 +88,7 @@ class WebController extends Controller
 
       return view('web.ficha', $data);
     }
+
     public function itemAjax($id){
 
       $data['item'] = Items::find($id);
