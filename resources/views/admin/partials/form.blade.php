@@ -11,13 +11,14 @@
     <label class="control-label col-sm-3 requiredField" for="categoria">Categoria <span class="asteriskField">*</span>
     </label>
     <div class="col-sm-8">
+
      <select class="select form-control" id="categoria" name="categoria">
-      <option selected="selected" value=""></option>
-      <option value="Calles">Calles</option>
-      <option value="Bacheo">Bacheo</option>
-      <option value="Luminarias">Luminarias</option>
-      <option value="Espacio P&uacute;blico">Espacio P&uacute;blico</option>
+       <option selected="selected" value=""></option>
+       @foreach ($categorias as $categoria)
+         <option value="{{$categoria->nombre}}">{{$categoria->nombre}}</option>
+       @endforeach
      </select>
+
      @if ($errors->has('categoria'))<p class="help-block">{{ $errors->first('categoria') }}</p>@endif
 
     </div>

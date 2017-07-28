@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@push('metatags')
+  @include('web.partials.metatags', ['item' => $item])
+@endpush
 
 @section('content')
 

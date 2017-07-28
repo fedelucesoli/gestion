@@ -1,4 +1,4 @@
-<div class="detalle">
+{{-- <div class="detalle">
   <h3 class="alt" class="alt">Estado de la obra</h3>
 
     <div class="progreso">
@@ -20,4 +20,4 @@
 
     </div>
 
-</div>
+</div> --}}

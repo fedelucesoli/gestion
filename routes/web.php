@@ -32,8 +32,8 @@ Route::get('/', 'WebController@index')->name('inicio');
 
 // Group OBRAS
 Route::get('/mapa', 'WebController@indexmapa')->name('mapa');
-Route::get('/item/{slugadmin}', 'WebController@item')->name('web.item.detalle');
-Route::get('/categoria/{id}', 'WebController@categoria')->name('web.categoria.list');
+Route::get('/obra/{slugadmin}', 'WebController@item')->name('web.item.detalle');
+Route::get('/categoria/{slug}', 'WebController@categoria')->name('web.categoria.list');
 
 Auth::routes();
 

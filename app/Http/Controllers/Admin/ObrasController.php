@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Items;
+use App\Categoria;
 use App\Image;
 
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ class ObrasController extends Controller{
 
     public function create(){
       $data['action'] = route("admin.obras.store");
+      $data['categorias'] = Categoria::all();
 
       $config = array();
       $config['center'] = '-35.1870349, -59.0949762';

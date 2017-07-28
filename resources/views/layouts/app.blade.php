@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Obras públicas Lobos</title>
-
+    @stack('metatags')
     <!-- Bootstrap -->
     {{-- <link href="{{ asset('assets/dist/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('assets/css/gestion.min.css') }}" rel="stylesheet"> --}}
@@ -37,6 +36,7 @@
     </div>
     @yield('modal')
     <footer>
+      {{-- todo AGREGAR FLICKR --}}
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-xs-6">

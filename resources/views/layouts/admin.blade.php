@@ -7,9 +7,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Gestion Lobos') }}</title>
-
     <title>Obras públicas Lobos</title>
+
 
     <link href="{{ asset('assets/css/lobostrap/lobostrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/dist/bootstrap-base.css') }}" rel="stylesheet">
@@ -17,6 +16,7 @@
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('css')
+
 
 </head>
 <body>

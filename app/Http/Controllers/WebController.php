@@ -28,6 +28,21 @@ class WebController extends Controller
       return view('inicio', $data);
 
     }
+    public function categoria($slug)
+    {
+      if (!isset($slug)) {
+        return redirect()->route('inicio');
+      }
+      $data['items'] = Items::activo()->where('categoria', $slug)->get();
+      if (!$data['items']) {
+        return redirect()->route('inicio');
+      }
+      $data['newsletter'] = true;
+
+
+      return view('inicio', $data);
+
+    }
 
     public function indexmapa()
     {

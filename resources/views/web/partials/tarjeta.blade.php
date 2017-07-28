@@ -18,7 +18,7 @@
         @endforeach
 
           <div class="detalles">
-            <a class="categoria" href='{{ url("categoria/"+ str_slug($item->categoria, "-")) }}'>{{ $item->categoria }}</a>
+            <a class="categoria" href='{!! route('web.categoria.list', str_slug($item->categoria, "-")) !!}'>{{ $item->categoria }}</a>
             {{-- <a data-toggle="modal" data-target="#ficha" data-id="{{$item->id}}"> --}}
             <a href='{{ route('web.item.detalle', [$item->slug]) }}'>
               <h4>{{ $item->titulo }}</h4>
@@ -26,4 +26,3 @@
           </div>
       </div>
     </div>
-{{-- href='{{url("item/$item->id")}}' --}}
