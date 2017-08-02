@@ -591,7 +591,7 @@ ol ol {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -599,10 +599,20 @@ ol ol {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  padding: 10px 15px;
+  padding: 12px 24px;
   font-size: 16px;
   line-height: 16px;
   border-radius: 5px;
+  user-select: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 .btn:hover,
 .btn:focus,
@@ -625,6 +635,120 @@ fieldset[disabled] .btn {
 a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
+}
+.btn-default {
+  border-color: #b4281c;
+  background: #e04538;
+  color: white;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #bd2a1d;
+  background-position: 0 -15px;
+}
+.btn-default:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+.btn-default:active,
+.btn-default.active {
+  background-color: #bd2a1d;
+  border-color: #b4281c;
+}
+.btn-primary {
+  border-color: #b4281c;
+  background: #e04538;
+  color: white;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #bd2a1d;
+  background-position: 0 -15px;
+}
+.btn-primary:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #bd2a1d;
+  border-color: #b4281c;
+}
+.btn-success {
+  border-color: #00543d;
+  background: #009B72;
+  color: white;
+}
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #005e45;
+  background-position: 0 -15px;
+}
+.btn-success:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+.btn-success:active,
+.btn-success.active {
+  background-color: #005e45;
+  border-color: #00543d;
+}
+.btn-info {
+  border-color: #b4281c;
+  background: #e04538;
+  color: white;
+}
+.btn-info:hover,
+.btn-info:focus {
+  background-color: #bd2a1d;
+  background-position: 0 -15px;
+}
+.btn-info:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+.btn-info:active,
+.btn-info.active {
+  background-color: #bd2a1d;
+  border-color: #b4281c;
+}
+.btn-warning {
+  border-color: #d47a00;
+  background: #FF9F1C;
+  color: white;
+}
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #de8000;
+  background-position: 0 -15px;
+}
+.btn-warning:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+.btn-warning:active,
+.btn-warning.active {
+  background-color: #de8000;
+  border-color: #d47a00;
+}
+.btn-danger {
+  border-color: #b4281c;
+  background: #e04538;
+  color: white;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #bd2a1d;
+  background-position: 0 -15px;
+}
+.btn-danger:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+.btn-danger:active,
+.btn-danger.active {
+  background-color: #bd2a1d;
+  border-color: #b4281c;
 }
 .icon-social-container {
   padding-top: 25px;
@@ -827,10 +951,9 @@ footer {
   padding-bottom: 30px;
 }
 .nav {
-  margin: 0 0 75px 0;
+  margin: 0 0 0px 0;
   padding-left: 0;
   list-style: none;
-  border-bottom: 1px solid rgba(57, 60, 84, 0.4);
   padding-bottom: 10px;
 }
 .nav > li {

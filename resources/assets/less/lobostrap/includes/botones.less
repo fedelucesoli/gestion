@@ -1,9 +1,10 @@
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+// https://coolors.co/2a2d34-009ddc-e04538-6761a8-009b72
 
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -11,19 +12,20 @@
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   white-space: nowrap;
-  // .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
-  // .user-select(none);
-  padding: 10px 15px;
+  padding: 12px 24px;
   font-size: 16px;
   line-height: 16px;
   .border-radius;
+  user-select: none;
+  // font-size: 13px;
 
   &,
   &:active,
   &.active {
     &:focus,
     &.focus {
-      // .tab-focus();
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
     }
   }
 
@@ -38,7 +40,6 @@
   &.active {
     outline: 0;
     background-image: none;
-    // .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
   }
 
   &.disabled,
@@ -56,6 +57,46 @@
     }
   }
 }
+.btn-styles(@btn-color: #555) {
+  border-color: darken(@btn-color, 14%);
+  background: @btn-color;
+  color: white;
+  &:hover,
+  &:focus  {
+    background-color: darken(@btn-color, 12%);
+    background-position: 0 -15px;
+  }
+  &:focus{
+    outline: 1px dotted rgba(255,255,255,0.6);
+    outline-offset: -4px;
+  }
+
+  &:active,
+  &.active {
+    background-color: darken(@btn-color, 12%);
+    border-color: darken(@btn-color, 14%);
+  }
+}
+
+.btn-default {
+  .btn-styles(@primario);
+}
+.btn-primary {
+  .btn-styles(@primario);
+}
+.btn-success {
+  .btn-styles(#009B72);
+}
+.btn-info    {
+  .btn-styles(#e04538);
+}
+.btn-warning {
+  .btn-styles(#FF9F1C);
+}
+.btn-danger  {
+  .btn-styles(@primario);
+}
+
 
 
 
