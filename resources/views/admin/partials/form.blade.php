@@ -1,5 +1,6 @@
 <form class="form-horizontal" action="{{ $action }}" method="post"  enctype="multipart/form-data">
     {{ csrf_field() }}
+
    <div class="form-group @if ($errors->has('titulo')) has-error @endif">
     <label class="control-label col-sm-3 requiredField" for="titulo">Titulo<span class="asteriskField">*</span></label>
     <div class="col-sm-8">
@@ -7,6 +8,7 @@
      @if ($errors->has('titulo'))<p class="help-block">{{ $errors->first('titulo') }}</p>@endif
     </div>
    </div>
+
    <div class="form-group @if ($errors->has('titulo')) has-error @endif">
     <label class="control-label col-sm-3 requiredField" for="categoria">Categoria <span class="asteriskField">*</span>
     </label>

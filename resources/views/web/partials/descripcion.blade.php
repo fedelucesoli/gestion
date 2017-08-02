@@ -1,4 +1,4 @@
-{{-- TODO hrefs --}}
+
 <ol class="breadcrumb" style="display:inline-block">
   <li><a href="{{ url('/')}}">Inicio</a></li>
   <li class="active"><a href="{!! route('web.categoria.list', ['slug' => $item->categoria]) !!}">{{ $item->categoria }}</a></li>

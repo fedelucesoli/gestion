@@ -43,6 +43,7 @@ class ObrasController extends Controller{
       createMarker_map({ map: map, position:event.latLng });
       document.getElementById("lat").value = event.latLng.lat();
       document.getElementById("lng").value = event.latLng.lng();
+      console.log("fede");
       ';
 
       Gmaps::initialize($config);
@@ -61,7 +62,7 @@ class ObrasController extends Controller{
     public function store(Request $request, ImageRepository $imageRepository){
 
       $rules = array(
-        'titulo'            => 'required',
+        'titulo'            => 'required|max:140',
         'descripcion'       => 'required',
         'categoria'         => 'required',
       );
@@ -79,13 +80,15 @@ class ObrasController extends Controller{
       $item->lng = $request->lng;
 
       if ($item->save()) {
-
-        foreach ($request->imagenes as $photo) {
-            $request['file'] = $photo;
-            $request['id_item'] = $item->id;
-            $response = $imageRepository->upload($request);
+        if(Input::hasFile('imagenes')){
+          foreach ($request->imagenes as $photo) {
+              $request['file'] = $photo;
+              $request['id_item'] = $item->id;
+              $response = $imageRepository->upload($request);
+          }
         }
-        $request->session()->flash('mensaje', 'COrrecto todo');
+
+        $request->session()->flash('mensaje', 'Obra creada!');
         return redirect()->route('admin.obras.index');
 
       }else{
@@ -126,17 +129,15 @@ class ObrasController extends Controller{
     }
 
 
-    public function edit(Items $items){
-      if (isset($id)) {
-        $data['item'] = Items::where('id','=', $id)->firstOrFail();
-        $data['itemrelacionados'] = Items::where('categoria', $data['item']->categoria)
-                                    ->where('id', '!=', $data['item']->id)
-                                    // ->limit(3)
-                                    ->get();
-        if(is_null($data['item'])){
-          return redirect()->route('admin');
-        }
-        $latlng= $data['item']->lat . ', '. $data['item']->lng;
+    public function edit(Request $request, $id){
+        $item = Items::find($id);
+        $data['item'] = $item;
+
+        $data['cate'] = Categoria::pluck('nombre', 'nombre');
+
+
+        $latlng = $data['item']->lat . ', '. $data['item']->lng;
+
         $config = array();
         $config['center'] = $latlng;
         $config['map_width'] = '100%';
@@ -149,24 +150,41 @@ class ObrasController extends Controller{
         $marker['icon'] = '/assets/img/marker.png';
 
         $marker['draggable'] = true;
-        $config['ondragend'] = '
-        createMarker_map({ map: map, position:event.latLng });
+        $marker['ondragend'] = '
         document.getElementById("lat").value = event.latLng.lat();
         document.getElementById("lng").value = event.latLng.lng();
         ';
+
         Gmaps::add_marker($marker);
         Gmaps::initialize($config);
-
         $data['map'] = Gmaps::create_map();
-        return view('admin.obras.edit', $data);
 
-      }
+        return view('admin.obras.edit')->with($data)->withPost($item);
+
+
     }
 
 
-    public function update(Request $request, Items $items)
+    public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, array(
+        'titulo'            => 'required|max:140',
+        'descripcion'       => 'required',
+        'categoria'         => 'required',
+      ));
+      $item = Items::find($id);
+      $item->titulo = $request->titulo;
+      $item->descripcion = $request->descripcion;
+      $item->categoria = $request->categoria;
+      $item->slug= Str::slug($request->titulo);
+      $item->lat = $request->lat;
+      $item->lng = $request->lng;
+
+      if ($item->save()) {
+        $request->session()->flash('success', 'Obra creada!');
+        return redirect()->route('admin.obras.show', $item->id);
+      }
+
     }
 
     public function estado(Request $request, Items $items)

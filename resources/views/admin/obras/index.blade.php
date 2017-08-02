@@ -34,7 +34,7 @@
               </th>
                 <td class="text-center">
 
-                  <a href="#" class="btn btn-warning btn-xs"><span class="fa fa-pencil fa-lg"></span></a> &nbsp;
+                  <a href="{{route('admin.obras.edit', $item)}}" class="btn btn-warning btn-xs"><span class="fa fa-pencil fa-lg"></span></a> &nbsp;
                   <a href="eliminar" data-id="{{$item->id}}" class="btn btn-danger btn-xs eliminar"><span class="fa fa-trash fa-lg "></span></a>
                 </td>
             </tr>
