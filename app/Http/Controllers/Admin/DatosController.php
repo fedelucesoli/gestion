@@ -17,72 +17,41 @@ class DatosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $data['datos'] = Datos::find($id);
+        return $data;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Datos  $datos
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Datos $datos)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Datos  $datos
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Datos $datos)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Datos  $datos
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Datos $datos)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Datos  $datos
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Datos $datos)
     {
         //

@@ -19,14 +19,15 @@
 
   <script type="text/javascript">
 
-  $('#modal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget);
-  var idrequest = button.data('id');
-  $.get( "api/item/"+idrequest)
-    .done(function( data ) {
-      $('#ficha .modal-body').html(data);
-    });
-  })
+  $('#modal').on('show.bs.modal');
+  // $('#modal').on('show.bs.modal', function (event) {
+  // var button = $(event.relatedTarget);
+  // var idrequest = button.data('id');
+  // $.get( "api/item/"+idrequest)
+  //   .done(function( data ) {
+  //     $('#ficha .modal-body').html(data);
+  //   });
+  // })
   </script>
 
 

@@ -7,6 +7,7 @@ use GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade as Gmaps;
 
 use App\Items;
 use App\Image;
+use App\Logic\MapasRepository;
 
 class WebController extends Controller
 {
@@ -85,6 +86,8 @@ class WebController extends Controller
       if(is_null($data['item'])){
         return redirect()->route('inicio');
       }
+
+
       $latlng= $data['item']->lat . ', '. $data['item']->lng;
       $config = array();
       $config['center'] = $latlng;

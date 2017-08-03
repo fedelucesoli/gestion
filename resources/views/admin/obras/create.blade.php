@@ -29,8 +29,8 @@
     @endif
 
     @include('admin.partials.form-edit', $data)
+
     
-    <a href="#" data-toggle="modal" data-target="#modal" data-id="{{$item->id}}">DATOS</a>
     @include('common.modal', $modal)
 
     {{ Form::close() }}
