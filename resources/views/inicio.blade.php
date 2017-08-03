@@ -9,7 +9,3 @@
   </div>
 
 @endsection
-
-@section('modal')
-  @include('web.partials.modal')
-@endsection

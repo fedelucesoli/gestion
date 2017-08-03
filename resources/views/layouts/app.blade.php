@@ -34,9 +34,10 @@
         @endif
 
     </div>
-    @yield('modal')
+        @yield('common.modal')
+
     <footer>
-      {{-- todo AGREGAR FLICKR --}}
+      {{-- todo Arreglar FLICKR --}}
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-xs-6">

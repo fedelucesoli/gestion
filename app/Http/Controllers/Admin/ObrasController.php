@@ -19,10 +19,12 @@ use Illuminate\Support\Str as Str;
 use Illuminate\Contracts\Validation\Validator;
 
 class ObrasController extends Controller{
+
   public function __construct()
   {
       $this->middleware('auth');
   }
+
     public function index(){
       $data['items'] = Items::all();
       return view('admin.obras.index', $data);
@@ -31,8 +33,13 @@ class ObrasController extends Controller{
     }
 
     public function create(){
-      $data['action'] = route("admin.obras.store");
-      $data['categorias'] = Categoria::all();
+      $data['item'] = new Items;
+
+      // $data['categorias'] = Categoria::all();
+      $data['categorias'] = Categoria::pluck('nombre', 'nombre');
+
+      $data['modal']['include'] = 'admin.partials.datos';
+      $data['modal']['titulo'] = 'Datos';
 
       $config = array();
       $config['center'] = '-35.1870349, -59.0949762';
@@ -43,22 +50,19 @@ class ObrasController extends Controller{
       createMarker_map({ map: map, position:event.latLng });
       document.getElementById("lat").value = event.latLng.lat();
       document.getElementById("lng").value = event.latLng.lng();
-      console.log("fede");
       ';
 
       Gmaps::initialize($config);
       $data['map'] = Gmaps::create_map();
 
+      $data['title'] = "Crear obra";
+      $data['action'] = route('admin.obras.store', $data['item']);
+
       return view('admin.obras.create', $data);
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request, ImageRepository $imageRepository){
 
       $rules = array(
@@ -133,7 +137,8 @@ class ObrasController extends Controller{
         $item = Items::find($id);
         $data['item'] = $item;
 
-        $data['cate'] = Categoria::pluck('nombre', 'nombre');
+        // $data['cate'] = Categoria::pluck('nombre', 'nombre');
+        $data['categorias'] = Categoria::pluck('nombre', 'nombre');
 
 
         $latlng = $data['item']->lat . ', '. $data['item']->lng;
@@ -158,8 +163,9 @@ class ObrasController extends Controller{
         Gmaps::add_marker($marker);
         Gmaps::initialize($config);
         $data['map'] = Gmaps::create_map();
-
-        return view('admin.obras.edit')->with($data)->withPost($item);
+        $data['title'] = "Editar obra";
+        $data['action'] = route("admin.obras.update", $item);
+        return view('admin.obras.create')->with($data)->withPost($item);
 
 
     }

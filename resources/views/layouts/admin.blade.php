@@ -62,9 +62,11 @@
 
          </div>
        </div>
+
        @if (Session::has('mensaje'))
             <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
         @endif
+
        @yield('content')
 
 
@@ -92,6 +94,7 @@
             </div>
           </div>
         </footer>
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
