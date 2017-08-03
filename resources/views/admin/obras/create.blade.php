@@ -30,8 +30,8 @@
 
     @include('admin.partials.form-edit', $data)
 
-    
-    @include('common.modal', $modal)
+
+    {{-- @include('common.modal', $modal) --}}
 
     {{ Form::close() }}
 

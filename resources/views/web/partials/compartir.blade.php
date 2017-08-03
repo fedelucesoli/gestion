@@ -15,7 +15,7 @@
           <span> Google +</span>
         </a>
 
-        <a href="" class="icon-button email">
+        <a href="mailto:?subject={{$item->titulo}}&amp;body={{url()->current()}}" class="icon-button email">
           <i class="fa fa-envelope"></i>
           <span>E-mail</span>
         </a>

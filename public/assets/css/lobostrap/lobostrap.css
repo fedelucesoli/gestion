@@ -840,7 +840,8 @@ footer {
   margin: 0 0 0px 0;
   padding-left: 0;
   list-style: none;
-  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(57, 60, 84, 0.4);
+  padding-bottom: 8px;
 }
 .nav > li {
   position: relative;
@@ -849,7 +850,6 @@ footer {
 .nav > li > a {
   padding: 15px 15px 10px 0;
   margin-right: 15px;
-  font-size: 18px;
   font-weight: 600;
   color: rgba(57, 60, 84, 0.7);
 }
@@ -877,13 +877,11 @@ footer {
 }
 .nav .activo > a {
   color: #e04538;
-  border-bottom: 2px solid #e04538;
 }
 .nav .activo > a,
 .nav .activo > a:hover,
 .nav .activo > a:focus {
   color: #e04538;
-  border-bottom: 2px solid #e04538;
 }
 .close {
   float: right;
