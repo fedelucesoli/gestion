@@ -24,7 +24,9 @@
 <body>
 
    @include('web/partials/header')
-
+   @if (Auth::check())
+       @include('admin.partials.nav')
+   @endif
     <div id="app">
 
         @yield('content')
