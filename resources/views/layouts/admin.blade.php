@@ -48,7 +48,7 @@
    @endif --}}
 
 
-     <div class="container box-linea">
+     <div class="container">
        <div class="row">
          <div class="col-md-12">
 
@@ -62,7 +62,8 @@
 
          </div>
        </div>
-
+       </div>
+       <div class="container box-linea">
        @if (Session::has('mensaje'))
             <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
         @endif
