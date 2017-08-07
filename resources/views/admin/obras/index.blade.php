@@ -78,7 +78,7 @@
     event.preventDefault();
     var this1 = $(this);
     var id = $(this).data('id');
-    if (confirm("ESTA ACCION NO SE PUEDE DESHACER. Eliminar? ") == true) {
+    if (confirm("ESTA ACCION NO SE PUEDE DESHACER. Seguro desea eliminar? ") == true) {
 
         $.ajax({
           headers: {

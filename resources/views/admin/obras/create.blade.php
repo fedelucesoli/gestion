@@ -28,7 +28,7 @@
         ]) !!}
     @endif
 
-    @include('admin.partials.form-edit', $data)
+    @include('admin.partials.form', $data)
 
 
     {{-- @include('common.modal', $modal) --}}

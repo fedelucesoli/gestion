@@ -20,7 +20,7 @@
 
 </head>
 <body>
-   @include('admin.partials/header')
+   @include('web.partials/header')
 
    {{-- @if (Auth::guest())
        <li><a href="{{ route('login') }}">Login</a></li>
@@ -63,7 +63,7 @@
          </div>
        </div>
        </div>
-       <div class="container box-linea">
+       <div class="container">
        @if (Session::has('mensaje'))
             <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
         @endif

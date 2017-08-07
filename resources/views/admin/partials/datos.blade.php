@@ -1,6 +1,3 @@
-
-
-
 <div class="form-group @if ($errors->has('fecha_inicio')) has-error @endif">
 
     {{ Form::label('fecha_inicio', "Fecha de Inicio", ['class' => 'control-label col-sm-3']) }}
