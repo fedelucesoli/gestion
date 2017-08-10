@@ -1,199 +1,203 @@
-
-.navbar{
-  min-height: 0;
-}
-.navbar-default{
-    background-color: white;
-    border-color: fade(@primario, 20%);
-    border: none;
-    height: 25px;
-    margin-bottom: 0;
-
-}
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-  border-bottom: 5px solid @primario;
-  padding-bottom: 10px;
-
-}
-.navbar-default .navbar-nav>li>a.active{
-  border-bottom: 5px solid @primario;
-  padding-bottom: 10px;
-}
-
-@media (max-width: 1000px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 0px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.0);
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-        border: none;
-    }
-}
-  .navbar-toggle {
-    border-color: @primario !important;
-    color: @primario;
-    // .sans-serif-font;
-    &:hover,
-    &:focus {
-      background-color: fade(white, 50%) !important;
-    }
-    .icon-bar {
-      background-color: #fafafa;
-    }
-  }
-
-  .logo-menu{
-      position: absolute;
-      z-index: 9999;
-      background-color: @primario;
-      height: 50px;
-      width: 120px;
-      // left: 15px;
-      border-radius: 0  0  2px  2px;
-      // .transition-all;
-
-      @media (min-width: 1000px) {
-          .nav-small &{
-              height: 50px;
-              width: 180px;
-              // .transition-all;
-          }
-      }
-
-      & img{
-          // width: 100%;
-          margin: 0 auto;
-          height: 100%;
-      }
-       @media (min-width: 768px) {
-          height: 80px;
-          width: 180px;
-          .nav-small {
-              height: 50px;
-              width: 180px;
-              // .transition-all;
-              }
-       }
-
-  }
-
-
-
-.nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
-  list-style: none;
-  & li{
-
-  }
-}
-.nav-sidebar > li > a {
-  display: block;
-  padding: 10px;
-  &:hover{
-    color: #fff;
-    background-color: @primario;
-  }
-
-  // border-bottom: 1px solid black;
-}
-.nav-sidebar > .active > a,
-.nav-sidebar >  a:hover,
-.nav-sidebar >  a:focus {
-  color: #fff;
-  background-color: @primario;
-}
-
-footer{
-  margin-top: 50px;
-  // border-top: 1px solid @primario;
-  background-color: fade(white, 70%);
-
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-
-.nav {
-  margin: 0 0 20px 0;
-  padding-left: 0; // Override default ul/ol
-  list-style: none;
-  border-bottom: 1px solid fade(@gray-base, 40%);
-  padding-bottom: 8px;
-  > li {
-    position: relative;
-    display: inline-block;
-    > a {
-      padding: 15px 15px 10px 0;
-      margin-right: 15px;
-      // font-size: 18px;
-      font-weight: 600;
-      color: fade(@gray-base, 70%);
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        color: @primario;
-      }
-    }
-    &.right{
-      float: right;
-      margin: 0;
-      padding-right: 0;
-      & a{
-        padding: 0;
-      }
-    }
-    // Disabled state sets text to gray and nukes hover/tab effects
-    &.disabled > a {
-      color: gray;
-      &:hover,
-      &:focus {
-        color: red;
-        text-decoration: none;
-        background-color: transparent;
-      }
-    }
-  }
-
-  // Open dropdowns
-  .activo > a {
-    color: @primario;
-    // border-bottom: 1px solid @primario;
-    &,
-    &:hover,
-    &:focus {
-      color: @primario;
-      // border-bottom: 1px solid @primario;
-    }
-  }
-
-}
+//
+// .navbar{
+//   min-height: 0;
+// }
+// .navbar-default{
+//     background-color: white;
+//
+//     height: 25px;
+//     margin-bottom: 0;
+// }
+// .navbar-solo{
+//     background-color: white;
+//     height: 50px;
+//     margin-bottom: 50px;
+// }
+//
+// .navbar-default, .navbar-solo .navbar-nav>li>a:focus, .navbar-default, .navbar-solo .navbar-nav>li>a:hover {
+//   border-bottom: 5px solid @primario;
+//   padding-bottom: 10px;
+// }
+//
+// .navbar-default, .navbar-solo .navbar-nav>li>a.active{
+//   border-bottom: 5px solid @primario;
+//   padding-bottom: 10px;
+// }
+//
+// @media (max-width: 1000px) {
+//     .navbar-header {
+//         float: none;
+//     }
+//     .navbar-left,.navbar-right {
+//         float: none !important;
+//     }
+//     .navbar-toggle {
+//         display: block;
+//     }
+//     .navbar-collapse {
+//         border-top: 0px solid transparent;
+//         box-shadow: inset 0 1px 0 rgba(255,255,255,0.0);
+//     }
+//     .navbar-fixed-top {
+//         top: 0;
+//         border-width: 0 0 1px;
+//     }
+//     .navbar-collapse.collapse {
+//         display: none!important;
+//     }
+//     .navbar-nav {
+//         float: none!important;
+//         margin-top: 7.5px;
+//     }
+//     .navbar-nav>li {
+//         float: none;
+//     }
+//     .navbar-nav>li>a {
+//         padding-top: 10px;
+//         padding-bottom: 10px;
+//     }
+//     .collapse.in{
+//         display:block !important;
+//         border: none;
+//     }
+// }
+//   .navbar-toggle {
+//     border-color: @primario !important;
+//     color: @primario;
+//     // .sans-serif-font;
+//     &:hover,
+//     &:focus {
+//       background-color: fade(white, 50%) !important;
+//     }
+//     .icon-bar {
+//       background-color: #fafafa;
+//     }
+//   }
+//
+//   .logo-menu{
+//       position: absolute;
+//       z-index: 9999;
+//       background-color: @primario;
+//       height: 50px;
+//       width: 120px;
+//       // left: 15px;
+//       border-radius: 0  0  2px  2px;
+//       // .transition-all;
+//
+//       @media (min-width: 1000px) {
+//           .nav-small &{
+//               height: 50px;
+//               width: 180px;
+//               // .transition-all;
+//           }
+//       }
+//
+//       & img{
+//           // width: 100%;
+//           margin: 0 auto;
+//           height: 100%;
+//       }
+//        @media (min-width: 768px) {
+//           height: 80px;
+//           width: 180px;
+//           .nav-small {
+//               height: 50px;
+//               width: 180px;
+//               // .transition-all;
+//               }
+//        }
+//
+//   }
+//
+//
+//
+// .nav-sidebar {
+//   margin-right: -21px; /* 20px padding + 1px border */
+//   margin-bottom: 20px;
+//   margin-left: -20px;
+//   list-style: none;
+//   & li{
+//
+//   }
+// }
+// .nav-sidebar > li > a {
+//   display: block;
+//   padding: 10px;
+//   &:hover{
+//     color: #fff;
+//     background-color: @primario;
+//   }
+//
+//   // border-bottom: 1px solid black;
+// }
+// .nav-sidebar > .active > a,
+// .nav-sidebar >  a:hover,
+// .nav-sidebar >  a:focus {
+//   color: #fff;
+//   background-color: @primario;
+// }
+//
+// footer{
+//   margin-top: 50px;
+//   // border-top: 1px solid @primario;
+//   background-color: fade(white, 70%);
+//
+//   padding-top: 30px;
+//   padding-bottom: 30px;
+// }
+//
+//
+// .nav-head {
+//   margin: 0 0 20px 0;
+//   padding-left: 0; // Override default ul/ol
+//   list-style: none;
+//   border-bottom: 1px solid fade(@gray-base, 40%);
+//   padding-bottom: 8px;
+//   > li {
+//     position: relative;
+//     display: inline-block;
+//     > a {
+//       padding: 15px 15px 10px 0;
+//       margin-right: 15px;
+//       // font-size: 18px;
+//       font-weight: 600;
+//       color: fade(@gray-base, 70%);
+//       &:hover,
+//       &:focus {
+//         text-decoration: none;
+//         color: @primario;
+//       }
+//     }
+//     &.right{
+//       float: right;
+//       margin: 0;
+//       padding-right: 0;
+//       & a{
+//         padding: 0;
+//       }
+//     }
+//     // Disabled state sets text to gray and nukes hover/tab effects
+//     &.disabled > a {
+//       color: gray;
+//       &:hover,
+//       &:focus {
+//         color: red;
+//         text-decoration: none;
+//         background-color: transparent;
+//       }
+//     }
+//   }
+//
+//   // Open dropdowns
+//   .activo > a {
+//     color: @primario;
+//     // border-bottom: 1px solid @primario;
+//     &,
+//     &:hover,
+//     &:focus {
+//       color: @primario;
+//       // border-bottom: 1px solid @primario;
+//     }
+//   }
+//
+// }

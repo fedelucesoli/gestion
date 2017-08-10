@@ -12,6 +12,7 @@
 
     <link href="{{ asset('assets/css/lobostrap/lobostrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/dist/bootstrap-base.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dist/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/plugins/animate.css') }}" rel="stylesheet">
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -20,7 +21,7 @@
 
 </head>
 <body>
-   @include('web.partials/header')
+   @include('common/header-solo')
 
    {{-- @if (Auth::guest())
        <li><a href="{{ route('login') }}">Login</a></li>
@@ -63,7 +64,7 @@
          </div>
        </div>
        </div>
-       <div class="container">
+       <div class="container box-linea">
        @if (Session::has('mensaje'))
             <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
         @endif
