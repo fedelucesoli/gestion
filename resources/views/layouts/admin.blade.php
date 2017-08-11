@@ -12,7 +12,7 @@
 
     <link href="{{ asset('assets/css/lobostrap/lobostrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/dist/bootstrap-base.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/bootstrap.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/dist/bootstrap.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('assets/plugins/animate.css') }}" rel="stylesheet">
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -63,46 +63,22 @@
 
          </div>
        </div>
-       </div>
-       <div class="container box-linea">
+      </div>
+
+
+    <div class="container box-linea">
        @if (Session::has('mensaje'))
             <div class="alert alert-info">{{ Session::get('mensaje') }}</div>
         @endif
 
        @yield('content')
-
-
      </div>
 
-
-
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 col-xs-6">
-                <img src="{{asset('assets/img/logo.png')}}" alt="2017 - Municipio de Lobos">
-              </div>
-              <div class="col-md-8 col-xs-6 text-right icon-social-container">
-                <a href="https://twitter.com/municipiolobos" target="_blank" class="icon-min twitter">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href="https://www.facebook.com/municipiolobos/" target="_blank" class="icon-min facebook">
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href="https://www.youtube.com/channel/UCgRZ4vy7UbgPe0RD8japUcw" target="_blank" class="icon-min youtube">
-                  <i class="fa fa-youtube-play"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
-
+    @include('common.footer')
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-
     @stack('scripts')
 
 </body>

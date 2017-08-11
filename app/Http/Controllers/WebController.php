@@ -15,11 +15,6 @@ class WebController extends Controller
 
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
       $data['items'] = Items::activo()->get();
@@ -39,14 +34,10 @@ class WebController extends Controller
         return redirect()->route('inicio');
       }
       $data['newsletter'] = true;
-
-
       return view('inicio', $data);
-
     }
 
-    public function indexmapa()
-    {
+    public function indexmapa(){
       $data['items'] = Items::all();
       $data['newsletter'] = true;
 
@@ -64,7 +55,7 @@ class WebController extends Controller
         $marker['position'] = $latlng;
         $marker['infowindow_content'] = $item->titulo;
         $marker['animation'] = 'DROP';
-        // $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|9999FF|000000';
+        $marker['icon'] = '/assets/img/marker.png';
         Gmaps::add_marker($marker);
 
       }
