@@ -57,8 +57,8 @@ class WebController extends Controller
         $marker['animation'] = 'DROP';
         $marker['icon'] = '/assets/img/marker.png';
         Gmaps::add_marker($marker);
-
       }
+
       Gmaps::initialize($config);
 
       $data['map'] = Gmaps::create_map();
@@ -77,7 +77,6 @@ class WebController extends Controller
       if(is_null($data['item'])){
         return redirect()->route('inicio');
       }
-
 
       $latlng= $data['item']->lat . ', '. $data['item']->lng;
       $config = array();

@@ -28,12 +28,6 @@ class AdminController extends Controller{
 
     }
 
-    public function itemsAdd(Request $request){
-
-
-
-    }
-
     public function uploadImages(Request $request){
       if (!isset($request->id_item)) {
         return redirect()->route('admin.dashboard');
@@ -50,7 +44,5 @@ class AdminController extends Controller{
       return $response;
     }
 
-    public function itemsEditar($id){
 
-    }
 }

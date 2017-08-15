@@ -82,6 +82,7 @@ class ObrasController extends Controller{
       $item->slug= Str::slug($request->titulo);
       $item->lat = $request->lat;
       $item->lng = $request->lng;
+      // TODO Agregar id de usuario
 
       if ($item->save()) {
         if(Input::hasFile('imagenes')){

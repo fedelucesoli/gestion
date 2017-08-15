@@ -32,7 +32,8 @@
 
 
 @include('admin.partials.form-mapa')
-@include('admin.partials.form-img')
+@include('admin.partials.img-upload')
+
 
 {{-- @include('admin.partials.datos') --}}
 
