@@ -11,16 +11,21 @@
 @import "includes/modal.less";
 html{
   // font-size: 100%;
+
 }
 
 body{
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background-color: @gray-bg;
+  background-color: @gray-bg !important;
   font-size: @font-size-base;
   font-family: @font-family-serif;
   line-height: 1.4;
+}
+hr{
+  margin-bottom: 40px;
+  border-top-color: fade(@gray-base, 20%);
 }
 
  // BreadCrumb  -
@@ -55,7 +60,7 @@ body{
  .box-linea{
    background-color: white;
    box-shadow: 0px 0px 16px 0 rgba(57, 60, 84, 0.1);
-   padding: 50px 25px;
+   padding: 25px 25px;
 
  }
  .box-linea-round{

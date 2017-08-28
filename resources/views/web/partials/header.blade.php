@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-imagen">
   <div class="container">
     <div class="navbar-header">
       <div class="logo-menu">

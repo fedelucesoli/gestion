@@ -45,10 +45,16 @@
 </div> --}}
 
 <hr>
-
 <div class="form-group">
  <div class="col-sm-8 col-sm-offset-3 text-right">
-  <button class="btn btn-primary">Cancelar</button>
-  {{ Form::submit('Guardar Cambios', ['class'=>'btn btn-danger'] )}}
+  <button class="btn btn-dark">Cancelar</button>
+  <input class="btn btn-primary" type="submit" value="Guardar Cambios">
  </div>
 </div>
+{{-- <div class="form-group">
+ <div class="col-sm-8 col-sm-offset-3 text-right">
+
+  <button class="btn btn-primary">Cancelar</button>
+  {{ Form::submit('Guardar Cambios', ['class'=>'btn btn-primary'] )}}
+ </div>
+</div> --}}

@@ -2,47 +2,62 @@
 
 @section('content')
 
+<div class="nav-head">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Listado de Obras</h1>
+    </div>
+    <div class="col-md-4">
+      <a href="{{route('admin.obras.create')}}" class="btn btn-primary float-right"> Agregar Obra</a>
+    </div>
+    <div class="col-md-12">
+      <ul>
+        <li>Fede</li>
+        <li>Fede</li>
+        <li>Fede</li>
+        <li>Fede</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Titulo</th>
+        <th>Categoria</th>
+        <th>Publicado</th>
 
-      <div class="col-md-12" style="margin: 0 0 25px 0;">
-        <h1>Listado de Obras</h1>
-        <a href="{{route('admin.obras.create')}}" class="btn"> Agregar Obra</a>
-      </div>
-      <div class="col-md-12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Titulo</th>
-            <th>Categoria</th>
-            <th>Publicado</th>
+        <th class="text-center">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($items as $item)
+        <tr>
+          <th scope="row">{{$item->id}}</th>
+          <th><a href="{{route('admin.obras.show', ['id' => $item->id])}}">{{$item->titulo}}</a></th>
+          <th>{{$item->categoria}}</th>
+          <th>
+            @if ($item->activo)
+              <a href="" data-id ="{{$item->id}}" class="btn estado" style="color: green"><span class="fa fa-toggle-on fa-lg"></span></a> &nbsp;
+            @else
+              <a href="" data-id ="{{$item->id}}" class="btn estado" style="color: green"><span class="fa fa-toggle-off fa-lg"></span></a> &nbsp;
+            @endif
+          </th>
+            <td class="text-center">
 
-            <th class="text-center">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($items as $item)
-            <tr>
-              <th scope="row">{{$item->id}}</th>
-              <th><a href="{{route('admin.obras.show', ['id' => $item->id])}}">{{$item->titulo}}</a></th>
-              <th class="info">{{$item->categoria}}</th>
-              <th>
-                @if ($item->activo)
-                  <a href="" data-id ="{{$item->id}}" class="btn btn-success btn-xs estado" style="color: green"><span class="fa fa-toggle-on fa-lg"></span></a> &nbsp;
-                @else
-                  <a href="" data-id ="{{$item->id}}" class="btn btn-success btn-xs estado" style="color: green"><span class="fa fa-toggle-off fa-lg"></span></a> &nbsp;
-                @endif
-              </th>
-                <td class="text-center">
+              <a href="{{route('admin.obras.edit', $item)}}" class="btn btn-secondary">Editar</a>
+              <a href="eliminar" data-id="{{$item->id}}" class="btn btn-secondary eliminar">Borrar</span></a>
+            </td>
+        </tr>
+      @endforeach
 
-                  <a href="{{route('admin.obras.edit', $item)}}" class="btn btn-warning btn-xs"><span class="fa fa-pencil fa-lg"></span></a> &nbsp;
-                  <a href="eliminar" data-id="{{$item->id}}" class="btn btn-danger btn-xs eliminar"><span class="fa fa-trash fa-lg "></span></a>
-                </td>
-            </tr>
-          @endforeach
-
-        </tbody>
-      </table>
-      </div>
+    </tbody>
+  </table>
+  </div>
+</div>
 
 @endsection
 @push('scripts')
