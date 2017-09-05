@@ -20,10 +20,10 @@ class WebController extends Controller
       $data['items'] = Items::activo()->get();
       $data['newsletter'] = true;
 
-
       return view('inicio', $data);
 
     }
+
     public function categoria($slug)
     {
       if (!isset($slug)) {

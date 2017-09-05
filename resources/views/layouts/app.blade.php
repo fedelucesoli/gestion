@@ -24,10 +24,12 @@
 </head>
 <body>
 
-   @include('web/partials/header')
+
 
    @if (Auth::check())
-       @include('admin.partials.nav')
+       @include('common/header-solo', array('imagen' => true))
+   @else
+     @include('web/partials/header')
    @endif
 
     <div id="app">

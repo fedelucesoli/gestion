@@ -50,3 +50,11 @@
 
   </div>
 </nav>
+@if (isset($imagen) && $imagen)
+  <header class="header-obras" style="    margin-top: -22px;">
+    <div class="header-content">
+      <h1>Haciendo un Lobos mejor</h1>
+    </div>
+  </header>
+
+@endif
